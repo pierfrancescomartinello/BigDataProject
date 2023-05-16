@@ -1,1 +1,17 @@
-- Dati gene
+- Form compiler's general data
+    - Age
+    - Gender
+    - Occupation (student, has a job, not currently working)
+    - Role (if employed)
+    - Association (Public/ private enterprise)
+    - Size of the enterprise( in ranges)
+    - Region
+    - City
+    - Region of the job/studies
+    - City of the job/studies
+    - [Invalidity](http://www.medicentrojesi.it/pdf/INAILINPS/Disabili.pdf)
+    - Number of people you live with
+    - Annual Income (reddito NdR)
+- Mobility (Giuseppe)
+- Energy consumption (Pierfrancesco)
+- Purchases (Francesca)
