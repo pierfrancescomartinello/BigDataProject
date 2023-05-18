@@ -48,5 +48,6 @@ Energy Requirements:
 
   - Do you pay your electrical bill or is someone else doing it? (Parent, relative, ect)
 
+
   - On average how much do you think you're spending on the electricity bill
 
