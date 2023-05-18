@@ -1,17 +1,17 @@
 - Form compiler's general data
     - Age
     - Gender
-    - Occupation (student, has a job, not currently working)
-    - Role (if employed)
-    - Association (Public/ private enterprise)
-    - Size of the enterprise( in ranges)
+    - Occupation (student, has a job, not currently working) <- expand
+    - Role (if employed) 
+    - Association (Public/ private enterprise)  <- expand
+    - Size of the enterprise( in ranges)  <- expand (aggiungi libero professionista)
     - Region
     - City
     - Region of the job/studies
     - City of the job/studies
     - [Invalidity](http://www.medicentrojesi.it/pdf/INAILINPS/Disabili.pdf)
     - Number of people you live with
-    - Annual Income (reddito NdR)
+    - Annual Income (reddito NdR)  <- expand (individual and family income)
 - Mobility (Giuseppe)
 - Energy consumption (Pierfrancesco)
 - Purchases (Francesca)
