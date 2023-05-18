@@ -11,7 +11,7 @@
         - how often do you leave the house for other reasons? [int]
     - how far away is your workplace/university/school? (in kms) [int]
     - do you use public transports? [dropdown] [yes/no]
-        - which public transports do you use? [checkboxes] [car/bicycle/motorbike/scooter/train]
+        - which public transports do you use? [checkboxes] [car/bicycle/scooter/train]
         - how much do you spend in public transports monthly? [int]
     - do you ever walk to your workplace/university/school? [yes/no]
 
