@@ -15,3 +15,9 @@
 - Mobility (Giuseppe)
 - Energy consumption (Pierfrancesco)
 - Purchases (Francesca)
+
+Sugli indici:
+    - RUS
+    - SDG: Sustainability Development Goals
+    - Indici di monitoraggio sostenibilità
+    - 5-6 indici per cisacun gruppo
