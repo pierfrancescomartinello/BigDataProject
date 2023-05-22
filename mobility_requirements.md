@@ -1,7 +1,5 @@
 # Mobility requirements
 
-
-
 - Personal
     - time at which the house is left [time]
         - reasoning: the more popular the time-frame -> the more likely it is that the user will be stuck in traffic -> the more likely it is that they'll consume more energy

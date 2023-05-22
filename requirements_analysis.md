@@ -21,4 +21,9 @@ Sugli indici:
     - SDG: Sustainability Development Goals
     - Indici di monitoraggio sostenibilità
     - GreenMetric Ranking
-    - 5-6 indici per cisacun gruppo
+    - 5-6 indici per ciascun gruppo (?)
+    - risorse utili:
+        - https://greenmetric.ui.ac.id/publications/guidelines/2023/english
+        - https://reterus.it/public/files/GdL/Cambiamenti_climatici/020_linee_guida_per_la_redazione_dei_piani_di_mitigazione.pdf
+        - https://aplanet.org/it/risorse/indicatori-di-sostenibilita/
+
