@@ -20,4 +20,5 @@ Sugli indici:
     - RUS
     - SDG: Sustainability Development Goals
     - Indici di monitoraggio sostenibilità
+    - GreenMetric Ranking
     - 5-6 indici per cisacun gruppo
