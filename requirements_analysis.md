@@ -27,3 +27,4 @@ Sugli indici:
         - https://reterus.it/public/files/GdL/Cambiamenti_climatici/020_linee_guida_per_la_redazione_dei_piani_di_mitigazione.pdf
         - https://aplanet.org/it/risorse/indicatori-di-sostenibilita/
 
+FILE RELAZIONE: https://docs.google.com/document/d/1bN15nY9FsXP09H9o8yU5D-akL_E0Q3rWulb8GtvwNIE/edit?usp=sharing
