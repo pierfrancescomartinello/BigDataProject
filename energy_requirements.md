@@ -18,7 +18,7 @@ Energy Requirements:
   
   ## Miscellaneous
   
-  - On a scale from 1-10 where 1 is "I only need the electricity to keep the fridge  and the boiler runnning" and 10 is "I have to keep each light of the house on" how much do you think you are wasting electricity
+  - On a scale from 1-10 where 1 is "I only need the electricity to keep the fridge and the boiler runnning" and 10 is "I have to keep each light of the house on" how much do you think you are wasting electricity
   
   - How much do you think you can avoid your energy wasting? (1-5)
   
@@ -54,3 +54,25 @@ Energy Requirements:
 
 Controlla di quantì KW è il contatore
 Controlla se si stacca il contatore
+
+
+
+
+pag 8
+pag 17
+
+
+Domande dall'indice:
+- Qual è la percentuale di prodotti elettronici efficienti che possiedi. [Percentuale]
+- Possiedi sistemi di controllo intelligenti della gestione dell'energia, condizionamento dell'aria, controlli di sicurezza, illuminazione, sistemi elettrici [Multi choice]
+- Possiedi impianti di fonti rinnovabili? Se si, seleziona quelli che possiedi
+- Se hai risposto positivamente alla domanda precedente, quanto (in percentuale) pensi che i tuoi impianti producano rispetto a ciò che consumi
+-  Che tipo di contatore possiedi in casa? [Singola selezione] (per la domanda EC4)
+- La tua casa rispecchia qualcuno di questi elementi di green building implementation?:
+    - Realizzato con prodotti nuaturali
+    - Fabbricato con processi efficienti
+    - I materiali utilizzati sono disponibili a livello locale
+    - I materiali utilizzati sono recuperati, risrutturati o ritrasformati
+    
+
+- C'è una sensibilizzazione nel tuo ambiente lavorativo ai temi sostenibili? 
