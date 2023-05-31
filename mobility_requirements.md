@@ -88,5 +88,5 @@
   2. come giudicheresti la qualità del passaggio pedonale nel tuo quartiere?
   3. quanto è trafficata l'area pedonale attorno al tuo posto di lavoro??
   4. come giudicheresti la qualità del passaggio pedonale sul tuo posto di lavoro/studio?
+    - Quante iniziative esistono da parte del tuo posto di lavoro/studio alla riduzione dell'uso dei mezzi di trasporto? (ad esempio, offrendo soluzioni alternative come navette o car pooling)
   5. aderiresti a iniziative per la riduzione dell'uso di veicoli per il tragitto verso il posto di lavoro/studio?
-     1. <lísta di iniziative possibili>
