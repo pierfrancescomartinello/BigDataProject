@@ -88,5 +88,69 @@
   2. come giudicheresti la qualità del passaggio pedonale nel tuo quartiere?
   3. quanto è trafficata l'area pedonale attorno al tuo posto di lavoro??
   4. come giudicheresti la qualità del passaggio pedonale sul tuo posto di lavoro/studio?
-    - Quante iniziative esistono da parte del tuo posto di lavoro/studio alla riduzione dell'uso dei mezzi di trasporto? (ad esempio, offrendo soluzioni alternative come navette o car pooling)
+
+  - Quante iniziative esistono da parte del tuo posto di lavoro/studio alla riduzione dell'uso dei mezzi di trasporto? (ad esempio, offrendo soluzioni alternative come navette o car pooling)
+
   5. aderiresti a iniziative per la riduzione dell'uso di veicoli per il tragitto verso il posto di lavoro/studio?
+
+
+## Domande in base agli indici
+
+### Domande senza indici, a scopo di analisi
+1. Nella tua giornata tipo, a che ora esci di casa? 
+2. Quanto traffico incontri quando esci di casa? 
+7. Quanto è distante, in chilometri, il tuo posto di lavoro/studio? 
+29. Quanti minuti impieghi solitamente per raggiungere il tuo posto di lavoro/studio usando il tuo veicolo? 
+28. Quanti minuti impieghi solitamente per trovare parcheggio per il tuo veicolo? 
+22. Qual è il veicolo principale che usi quotidianamente? 
+9. Seleziona tutti i mezzi di trasporto pubblici di cui fai uso tipicamente 
+33. Indicativamente, quanti m² della tua abitazione sono riservati al parcheggio? 
+34. Indicativamente, quanti m² del tuo posto di lavoro sono riservati al parcheggio? 
+
+### Domande con indici
+
+- 11. Da 1 (mai) a 4 (sempre), quanto spesso raggiungi il posto di lavoro/studio a piedi? 
+- 26. Cosa alimenta il tuo veicolo? 
+- 24. In quale classe si trova il veicolo che usi quotidianamente? (basati sull'anno di immatricolazione se non conosci la classe)
+
+- SI1 and SI3: The ratio of open space area to the total area
+    - 31. Indicativamente, quanti m² di spazi verdi sono presenti nella tua residenza? 
+    - 37. Indicativamente, quanto è grande la tua residenza? (in m²) 
+      - SI1 and SI3 = (31.)/(37.) 
+    - 39. Indicativamente, quanto è grande il tuo posto di lavoro/studio? (in m²) 
+    - 38. Indicativamente, quanti m² di spazi verdi sono presenti nel tuo posto di lavoro/studio? 
+      - SI1 and SI3 (for work) = (39.)/(38.) 
+
+- SI5: The total open space area divided by the total campus population
+  - 44. Da quante persone è composto il tuo nucleo familiare?
+    - SI5 = (31.)/(44.)
+
+- SI6: Percentage of university budget for sustainability efforts
+  - * limitato alle spese in mobilità 
+  - !!! chiedi a Francesca per verificare che non lo stia facendo anche lei
+  - 10. Quanto spendi mensilmente in trasporti pubblici? 
+  - 27. Quanto spendi in carburante ogni mese?  
+  - 45. Quanto spendi in trasporti ecosostenibili ogni mese?
+    - SI6 = (45.)/(10.)+(27.)+(45.)
+
+- TR7: Number of initiatives to decrease private vehicles on campus
+  - 36. Quante iniziative esistono da parte del tuo posto di lavoro/studio alla riduzione dell'uso dei mezzi di trasporto? (ad esempio, offrendo soluzioni alternative come navette o car pooling) 
+
+
+- TR8: Pedestrian path on campus
+  46. Il tragitto tra casa tua e il tuo posto di lavoro/studio: (0.00, 0.25, 0.50, 0.75, 1.00)
+
+
+### Domande rimosse
+14. Quanti veicoli possiede la tua famiglia? 
+13. Quanti veicoli ha acquistato la tua famiglia negli ultimi 10 anni? 
+16. In quale classe si trovano i veicoli posseduti dalla tua famiglia? 
+18. Quante persone nella tua famiglia possiedono la patente? 
+32. Da 1 a 5, quanti spazi verdi sono presenti nel tuo posto di lavoro o studio? 
+30. Da 1 a 5, quanti spazi verdi incontri nel tuo tragitto quotidiano? 
+8. Seleziona tutti i mezzi di trasporto personali di cui fai uso tipicamente 
+3. Quante volte a settimana esci di casa? 
+4. Quante volte a settimana esci per lavoro/studio? 
+5. Quante volte a settimana esci per andare a fare la spesa? 
+6. Quante volte a settimana esci per altri motivi? 
+25. Qual è la cilindrata del tuo veicolo? (in cc) 
