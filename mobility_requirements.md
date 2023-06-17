@@ -42,3 +42,4 @@
 4. SI6: Percentage of budget for sustainability efforts = (13.)/(12.)+(13.)+(14.) (300pt)
 5. TR7: Number of initiatives to decrease private vehicles on job/university = 21.
 6. TR8: Pedestrian path on job/university = 20.
+7. (6.)/(5.)
