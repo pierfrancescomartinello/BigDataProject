@@ -1,0 +1,15 @@
+{
+  "questions": {
+    "i_0": {
+      "question_text": "",
+      "question_score": 0,
+      "question_type": "basic/comma_separated/to_be_decided",
+      "answers": {
+        "0": {
+          "answer_text": "",
+          "answer_score": 0
+        }
+      }
+    }
+  }
+}
