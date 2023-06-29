@@ -1,0 +1,202 @@
+{
+    "Spesa" : {
+        "S_1" : {
+            "Text" : "Quante volte alla settimana fai la spesa?",
+            "Score" : 150,
+            "Answers" : {
+                "a" : {
+                    "Text" : "1",
+                    "Score" : 0,
+                    "Score_1" : 1
+                },
+                "b" : {
+                    "Text" : "2",
+                    "Score" : 0.25,
+                    "Score_1" : 2
+                },
+                "c" : {
+                    "Text" : "3",
+                    "Score" : 0.50,
+                    "Score_1" : 3
+                },
+                "d" : {
+                    "Text" : "4",
+                    "Score" : 0.75,
+                    "Score_1" : 4
+                },
+                "e" : {
+                    "Text" : ">=5",
+                    "Score" : 1,
+                    "Score_1" : 5
+                }
+            }
+        }, 
+        "S_2" : {
+            "Text" : "Quanti supermercati visiti quando fai la spesa?",
+            "Score" : 150,
+            "Answers" : {
+                "a" : {
+                    "Text" : "1",
+                    "Score" : 0,
+                    "Score_1" : 1
+                },
+                "b" : {
+                    "Text" : "2",
+                    "Score" : 0.25,
+                    "Score_1" : 2
+                },
+                "c" : {
+                    "Text" : "3",
+                    "Score" : 0.50,
+                    "Score_1" : 3
+                },
+                "d" : {
+                    "Text" : "4",
+                    "Score" : 0.75,
+                    "Score_1" : 4
+                },
+                "e" : {
+                    "Text" : ">=5",
+                    "Score" : 1,
+                    "Score_1" : 5
+                }
+            }
+        },
+        "S_3" : {
+            "Text" : "Per una vita più sostenibile, una buona abitudine per gli acquisti è quello di servirsi di prodotti locali e/o di propria produzione. In quale delle seguenti condizioni ti rispecchi maggiormente?",
+            "Score" : 200,
+            "Answers" : {
+                "a" : {
+                    "Text" : "Mi servo esclusivamente dei supermercati",
+                    "Score" : 0
+                },
+                "b" : {
+                    "Text" : "Vorrei servirmi di mercatini biologici ma non sono presenti nella mia città",
+                    "Score" : 0.25
+                },
+                "c" : {
+                    "Text" : "Acquisto raramente ai mercatini biologici presenti nella mia città",
+                    "Score" : 0.50
+                },
+                "d" : {
+                    "Text" : "Acquisto spesso (media di 2 volte al mese) ai mercatini biologici presenti nella mia città",
+                    "Score" : 0.75
+                },
+                "e" : {
+                    "Text" : "Acquisto molti (media di più di 2 volte al mese) prodotti locali",
+                    "Score" : 1
+                }
+            }
+        },
+        "S_4" : {
+            "Text" : "Per incentivare la spesa sostenibilei, sono stati creati dei servizi online per l’acquisto e spedizione a casa di tutti i prodotti biologici, siti come BioDiscount, Greenweez, La Boutique del Biologico. Sfrutti tali servizi?",
+            "Score" : 150,
+            "Answers" : {
+                "a" : {
+                    "Text" : "No, non ero a conoscenza",
+                    "Score" : 0
+                },
+                "b" : {
+                    "Text" : "No, li conosco ma non li uso",
+                    "Score" : 0.33
+                },
+                "c" : {
+                    "Text" : "Si ma raramente (media di 2 volte al mese)",
+                    "Score" : 0.66
+                },
+                "d" : {
+                    "Text" : "Si ",
+                    "Score" : 1
+                }
+            }
+        },
+        "S_5" : {
+            "Text" : "All’interno dei supermercati, presti attenzione ai prodotti con etichetta ecologica (basso consumo CO2, allevamento a terra)?",
+            "Score" : 150,
+            "Answers" : {
+                "a" : {
+                    "Text" : "No, non guardo le etichette",
+                    "Score" : 0
+                },
+                "b" : {
+                    "Text" : "Si, ma hanno un prezzo elevato",
+                    "Score" : 0.33
+                },
+                "c" : {
+                    "Text" : "Si, raramente acquisto prodotti con etichetta ecologica ",
+                    "Score" : 0.66
+                },
+                "d" : {
+                    "Text" : "Si, acquisto spesso prodotti con etichetta ecologica  ",
+                    "Score" : 1
+                }
+            }
+        },
+        "S_6" : {
+            "Text" : "Sacchetti della spesa",
+            "Score" : 150,
+            "Answers" : {
+                "a" : {
+                    "Text" : "Non mi occupo io della spesa in casa ",
+                    "Score" : 0
+                },
+                "b" : {
+                    "Text" : "Uso i sacchetti del supermercato e li butto via",
+                    "Score" : 0.33
+                },
+                "c" : {
+                    "Text" : "Uso i sacchetti del supermercato e li riutilizzo",
+                    "Score" : 0.66
+                },
+                "d" : {
+                    "Text" : "Non uso i sacchetti del supermercato, uso sacchetti personali",
+                    "Score" : 1
+                }
+            }
+        },
+        "S_7" : {
+            "Text" : "Prodotti per la casa e per indumenti",
+            "Score" : 150,
+            "Answers" : {
+                "a" : {
+                    "Text" : "Non mi occupo io di questo acquisto",
+                    "Score" : 0
+                },
+                "b" : {
+                    "Text" : "Riacquisto i prodotti",
+                    "Score" : 0.33
+                },
+                "c" : {
+                    "Text" : "Riacquisto i prodotti, non vi sono servizi alla spina",
+                    "Score" : 0.66
+                },
+                "d" : {
+                    "Text" : "Ricarico alla spina",
+                    "Score" : 1
+                }
+            }
+        },
+        "S_8" : {
+            "Text" : "Acqua potabile",
+            "Score" : 150,
+            "Answers" : {
+                "a" : {
+                    "Text" : "Non mi occupo io di questo acquisto",
+                    "Score" : 0
+                },
+                "b" : {
+                    "Text" : "Riacquisto le casse di acqua",
+                    "Score" : 0.33
+                },
+                "c" : {
+                    "Text" : "Riacquisto i prodotti, non vi sono servizi alla spina",
+                    "Score" : 0.66
+                },
+                "d" : {
+                    "Text" : "Ricarico alla spina",
+                    "Score" : 1
+                }
+            }
+        }
+    }
+}
