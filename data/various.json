@@ -28,19 +28,16 @@
 
             }
         },
-
         "eh2":{
             "question_text": "Seleziona se possiedi uno dei seguenti sistemi?",
             "question_type": "comma_separated",
             "question_score": ""
         },
-
         "eh3":{
             "question_text": "Seleziona quali sistemi di fonti rinnovabili possiedi?",
             "question_type": "comma_separated",
             "question_score": ""
         },
-
         "eh4":{
             "question_text": "Quanto, in percentuale, pensi che gli impianti rinnovabili che si possiedono producano rispetto a ciò che consumi?",
             "question_type": "basic",
@@ -94,7 +91,6 @@
             "question_type": "comma_separated",
             "question_score": ""
         },
-
         "ew1":{
             "question_text": "Qual è la percentuale di prodotti elettronici efficienti che il tuo luogo di lavoro/ la tua università possiede?",
             "question_type": "basic",
@@ -123,19 +119,16 @@
 
             }
         },
-
         "ew2":{
             "question_text": "Seleziona se il tuo luogo di lavoro/la tua università possiede uno dei seguenti sistemi?",
             "question_type": "comma_separated",
             "question_score": ""
         },
-
         "ew3":{
             "question_text": "Seleziona quali sistemi di fonti rinnovabili possiede il tuo luogo di lavoro/la tua università?",
             "question_type": "comma_separated",
             "question_score": ""
         },
-
         "ew4":{
             "question_text": "Quanto, in percentuale, pensi che gli impianti rinnovabili del tuo luogo di lavoro/della tua università producano rispetto a ciò che viene consumato?",
             "question_type": "basic",
@@ -168,8 +161,7 @@
             "question_text": "Il tuo luogo di lavoro/la tua università rispecchia i seguenti elementi di Green Building Implementation?",
             "question_type": "comma_separated",
             "question_score": ""
-        },
-        
+        },   
         "ww1":{
             "question_text" :"Consumo dell'acqua - Lavoro o Università [Programma di conservazione dell'acqua]",
             "question_type": "basic",
@@ -602,8 +594,5 @@
                 }
             }
         }
-
-    
     }
-
 }
