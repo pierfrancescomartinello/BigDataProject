@@ -1,8 +1,5 @@
 {
-    
     "questions": {
-    
-    "Acquisti" : {
         "S_1" : {
             "Text" : "Quante volte alla settimana fai la spesa?",
             "Score" : 150,
@@ -352,10 +349,8 @@
                     "Score" : 1
                 }
             }
-        }
-    },
-    
-    "Mobility":{
+        },
+
         "m_0": {
             "question_text": "Nella tua giornata tipo, a che ora esci di casa?",
             "question_score": 0,
@@ -962,10 +957,7 @@
             "answer_score": 1.00
             }
         }
-        }
-    
-    },
-    "Energy-Home":{
+        },
         "eh1":{
             "question_text": "Qual è la percentuale di prodotti elettronici efficienti che possiedi?",
             "question_type": "basic",
@@ -1056,9 +1048,7 @@
             "question_text": "La tua casa rispecchia i seguenti elementi di Green Building Implementation?",
             "question_type": "comma_separated",
             "question_score": ""
-        }
-    },
-    "Energy-Work":{
+        },
         "ew1":{
             "question_text": "Qual è la percentuale di prodotti elettronici efficienti che il tuo luogo di lavoro/ la tua università possiede?",
             "question_type": "basic",
@@ -1129,10 +1119,7 @@
             "question_text": "Il tuo luogo di lavoro/la tua università rispecchia i seguenti elementi di Green Building Implementation?",
             "question_type": "comma_separated",
             "question_score": ""
-        }
-    
-    },
-    "Water-Work":{
+        },
         "ww1":{
             "question_text" :"Consumo dell'acqua - Lavoro o Università [Programma di conservazione dell'acqua]",
             "question_type": "basic",
@@ -1240,9 +1227,7 @@
                     "answer_score" : 1
                 }
             }
-        }
-    },
-    "Water-Home":{
+        },
         "wh1":{
             "question_text" :"Consumo dell'acqua - Casa [Programma di conservazione dell'acqua]",
             "question_type": "basic",
@@ -1350,10 +1335,7 @@
                     "answer_score" : 1
                 }
             }
-        }
-    },
-    
-    "Waste-Home":{
+        },
         "wastew1":{
             "question_text" :"Rifiuti - Lavoro o Università [Vengono implementate le 3R: Riduzione, Riuso e Riciclo]",
             "question_type": "basic",
@@ -1461,9 +1443,7 @@
                     "answer_score" : 1
                 }
             }
-        }
-    },
-    "Waste-Work":{
+        },
         "wasteh1":{
             "question_text" :"Rifiuti - Casa [Vengono implementate le 3R: Riduzione, Riuso e Riciclo]",
             "question_type": "basic",
@@ -1571,11 +1551,7 @@
                     "answer_score" : 1
                 }
             }
-        }
-    
-    },
-
-    "Educazione e Ricerca" : {
+        },
         "ER_1" : {
             "Text" : "Inserire il numero di eventi (conferenze, workshop, sensibilizzazione, formazione pratica, festival, etc.) legati ai problemi di sostenibilità e dell'ambiente organizzati dalla propria azienda e/o università (media per anno degli ultimi 3 anni). Selezionare una delle seguenti opzioni:",
             "Score" : 200,
@@ -1654,7 +1630,5 @@
                 }
             }
         }
-    }
-
     }
 }
