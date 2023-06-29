@@ -1,32 +1,13 @@
 {
-    "questions":{
-        "eh1":{
-            "question_text": "Qual è la percentuale di prodotti elettronici efficienti che possiedi?",
-            "question_type": "basic",
-            "question_score": "",
-            "answers":{
-                "0":{
-                    "answer_text" : "Minore dell'1%",
-                    "answer_score": 0
-                },
-                "1":{
-                    "answer_text" : "Meno del 25%",
-                    "answer_score": 0.25
-                },
-                "2":{
-                    "answer_text" : "Tra il 25 e il 50%",
-                    "answer_score": 0.50
-                },
-                "3":{
-                    "answer_text" : "Tra il 51 e il 75%",
-                    "answer_score": 0.75
-                },
-                "4":{
-                    "answer_text" : "Superiore al 75%",
-                    "answer_score": 1
-                }
-
-            }
+  "questions": {
+    "eh1": {
+      "question_text": "Qual è la percentuale di prodotti elettronici efficienti che possiedi?",
+      "question_type": "basic",
+      "question_score": "",
+      "answers": {
+        "0": {
+          "answer_text": "Minore dell'1%",
+          "answer_score": 0
         },
         "eh2":{
             "question_text": "Seleziona se possiedi uno dei seguenti sistemi?",
