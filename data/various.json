@@ -1,609 +1,601 @@
 {
-    "questions":{
-        "eh1":{
-            "question_text": "Qual è la percentuale di prodotti elettronici efficienti che possiedi?",
-            "question_type": "basic",
-            "question_score": "",
-            "answers":{
-                "0":{
-                    "answer_text" : "Minore dell'1%",
-                    "answer_score": 0
-                },
-                "1":{
-                    "answer_text" : "Meno del 25%",
-                    "answer_score": 0.25
-                },
-                "2":{
-                    "answer_text" : "Tra il 25 e il 50%",
-                    "answer_score": 0.50
-                },
-                "3":{
-                    "answer_text" : "Tra il 51 e il 75%",
-                    "answer_score": 0.75
-                },
-                "4":{
-                    "answer_text" : "Superiore al 75%",
-                    "answer_score": 1
-                }
-
-            }
+  "questions": {
+    "eh1": {
+      "question_text": "Qual è la percentuale di prodotti elettronici efficienti che possiedi?",
+      "question_type": "basic",
+      "question_score": "",
+      "answers": {
+        "0": {
+          "answer_text": "Minore dell'1%",
+          "answer_score": 0
         },
-
-        "eh2":{
-            "question_text": "Seleziona se possiedi uno dei seguenti sistemi?",
-            "question_type": "comma_separated",
-            "question_score": ""
+        "1": {
+          "answer_text": "Meno del 25%",
+          "answer_score": 0.25
         },
-
-        "eh3":{
-            "question_text": "Seleziona quali sistemi di fonti rinnovabili possiedi?",
-            "question_type": "comma_separated",
-            "question_score": ""
+        "2": {
+          "answer_text": "Tra il 25 e il 50%",
+          "answer_score": 0.5
         },
-
-        "eh4":{
-            "question_text": "Quanto, in percentuale, pensi che gli impianti rinnovabili che si possiedono producano rispetto a ciò che consumi?",
-            "question_type": "basic",
-            "question_score": "",
-            "answers":{
-                "0":{
-                    "answer_text" : "Non possiedo nessun impianto",
-                    "answer_score": 0
-                },
-                "1":{
-                    "answer_text" : "Meno del 25 %",
-                    "answer_score": 0.25
-                },
-                "2":{
-                    "answer_text" : "Tra il 26 e il 50 %",
-                    "answer_score": 0.50
-                },
-                "3":{
-                    "answer_text" : "Tra il 51 e il 75 %",
-                    "answer_score": 0.75
-                },
-                "4":{
-                    "answer_text" : "Più del 75%",
-                    "answer_score": 1
-                }
-
-            }
+        "3": {
+          "answer_text": "Tra il 51 e il 75%",
+          "answer_score": 0.75
         },
-        "eh5":{
-            "question_text": "Qual è il kilowattaggio del tuo impianto elettrico?",
-            "question_type": "basic",
-            "question_score": 0,
-            "answers":{
-                "0":{
-                    "answer_text" : "3 kWh",
-                    "answer_score": 3
-                },
-                "1":{
-                    "answer_text" : "4.5 kWh",
-                    "answer_score": 4.5
-                },
-                "2":{
-                    "answer_text" : "6 kWh",
-                    "answer_score": 6
-                }
-
-            }
-        },
-        "eh6":{
-            "question_text": "La tua casa rispecchia i seguenti elementi di Green Building Implementation?",
-            "question_type": "comma_separated",
-            "question_score": ""
-        },
-
-        "ew1":{
-            "question_text": "Qual è la percentuale di prodotti elettronici efficienti che il tuo luogo di lavoro/ la tua università possiede?",
-            "question_type": "basic",
-            "question_score": "",
-            "answers":{
-                "0":{
-                    "answer_text" : "Minore dell'1%",
-                    "answer_score": 0
-                },
-                "1":{
-                    "answer_text" : "Meno del 25%",
-                    "answer_score": 0.25
-                },
-                "2":{
-                    "answer_text" : "Tra il 25 e il 50%",
-                    "answer_score": 0.50
-                },
-                "3":{
-                    "answer_text" : "Tra il 51 e il 75%",
-                    "answer_score": 0.75
-                },
-                "4":{
-                    "answer_text" : "Superiore al 75%",
-                    "answer_score": 1
-                }
-
-            }
-        },
-
-        "ew2":{
-            "question_text": "Seleziona se il tuo luogo di lavoro/la tua università possiede uno dei seguenti sistemi?",
-            "question_type": "comma_separated",
-            "question_score": ""
-        },
-
-        "ew3":{
-            "question_text": "Seleziona quali sistemi di fonti rinnovabili possiede il tuo luogo di lavoro/la tua università?",
-            "question_type": "comma_separated",
-            "question_score": ""
-        },
-
-        "ew4":{
-            "question_text": "Quanto, in percentuale, pensi che gli impianti rinnovabili del tuo luogo di lavoro/della tua università producano rispetto a ciò che viene consumato?",
-            "question_type": "basic",
-            "question_score": "",
-            "answers":{
-                "0":{
-                    "answer_text" : "Non possiedo nessun impianto",
-                    "answer_score": 0
-                },
-                "1":{
-                    "answer_text" : "Meno del 25 %",
-                    "answer_score": 0.25
-                },
-                "2":{
-                    "answer_text" : "Tra il 26 e il 50 %",
-                    "answer_score": 0.50
-                },
-                "3":{
-                    "answer_text" : "Tra il 51 e il 75 %",
-                    "answer_score": 0.75
-                },
-                "4":{
-                    "answer_text" : "Più del 75%",
-                    "answer_score": 1
-                }
-
-            }
-        },
-        "ew5":{
-            "question_text": "Il tuo luogo di lavoro/la tua università rispecchia i seguenti elementi di Green Building Implementation?",
-            "question_type": "comma_separated",
-            "question_score": ""
-        },
-        
-        "ww1":{
-            "question_text" :"Consumo dell'acqua - Lavoro o Università [Programma di conservazione dell'acqua]",
-            "question_type": "basic",
-            "question_score": "",
-            "answers": {
-                "0":{
-                    "answer_text" : "Nessun Interesse",
-                    "answer_score" : 0
-                },
-                "1":{
-                    "answer_text" : "In progetto",
-                    "answer_score" : 0.25
-                },
-                "2":{
-                    "answer_text" : "1-25%",
-                    "answer_score" : 0.50
-                },
-                "3":{
-                    "answer_text" : "26-50%",
-                    "answer_score" : 0.75
-                },
-                "4":{
-                    "answer_text" : "51-100%",
-                    "answer_score" : 1
-                }
-            }
-        },
-        "ww2":{
-            "question_text" :"Consumo dell'acqua - Lavoro o Università [Programma di riciclo dell'acqua]",
-            "question_type": "basic",
-            "question_score": "",
-            "answers": {
-                "0":{
-                    "answer_text" : "Nessun Interesse",
-                    "answer_score" : 0
-                },
-                "1":{
-                    "answer_text" : "In progetto",
-                    "answer_score" : 0.25
-                },
-                "2":{
-                    "answer_text" : "1-25%",
-                    "answer_score" : 0.50
-                },
-                "3":{
-                    "answer_text" : "26-50%",
-                    "answer_score" : 0.75
-                },
-                "4":{
-                    "answer_text" : "51-100%",
-                    "answer_score" : 1
-                }
-            }
-        },
-        "ww3":{
-            "question_text" :"Consumo dell'acqua - Lavoro o Università [Utilizzo di strumenti e elettrodomestici efficienti (asciugamani ad aria, scarico a doppio bottone, ecc)]",
-            "question_type": "basic",
-            "question_score": "",
-            "answers": {
-                "0":{
-                    "answer_text" : "Nessun Interesse",
-                    "answer_score" : 0
-                },
-                "1":{
-                    "answer_text" : "In progetto",
-                    "answer_score" : 0.25
-                },
-                "2":{
-                    "answer_text" : "1-25%",
-                    "answer_score" : 0.50
-                },
-                "3":{
-                    "answer_text" : "26-50%",
-                    "answer_score" : 0.75
-                },
-                "4":{
-                    "answer_text" : "51-100%",
-                    "answer_score" : 1
-                }
-            }
-        },
-        "ww4":{
-            "question_text" :"Consumo dell'acqua - Lavoro o Università [Consumo di acqua trattata comparata con tutte le altre fonti d'acqua]",
-            "question_type": "basic",
-            "question_score": "",
-            "answers": {
-                "0":{
-                    "answer_text" : "Nessun Interesse",
-                    "answer_score" : 0
-                },
-                "1":{
-                    "answer_text" : "In progetto",
-                    "answer_score" : 0.25
-                },
-                "2":{
-                    "answer_text" : "1-25%",
-                    "answer_score" : 0.50
-                },
-                "3":{
-                    "answer_text" : "26-50%",
-                    "answer_score" : 0.75
-                },
-                "4":{
-                    "answer_text" : "51-100%",
-                    "answer_score" : 1
-                }
-            }
-        },
-        "wh1":{
-            "question_text" :"Consumo dell'acqua - Casa [Programma di conservazione dell'acqua]",
-            "question_type": "basic",
-            "question_score": "",
-            "answers": {
-                "0":{
-                    "answer_text" : "Nessun Interesse",
-                    "answer_score" : 0
-                },
-                "1":{
-                    "answer_text" : "In progetto",
-                    "answer_score" : 0.25
-                },
-                "2":{
-                    "answer_text" : "1-25%",
-                    "answer_score" : 0.50
-                },
-                "3":{
-                    "answer_text" : "26-50%",
-                    "answer_score" : 0.75
-                },
-                "4":{
-                    "answer_text" : "51-100%",
-                    "answer_score" : 1
-                }
-            }
-        },
-        "wh2":{
-            "question_text" :"Consumo dell'acqua - Casa [Programma di riciclo dell'acqua]",
-            "question_type": "basic",
-            "question_score": "",
-            "answers": {
-                "0":{
-                    "answer_text" : "Nessun Interesse",
-                    "answer_score" : 0
-                },
-                "1":{
-                    "answer_text" : "In progetto",
-                    "answer_score" : 0.25
-                },
-                "2":{
-                    "answer_text" : "1-25%",
-                    "answer_score" : 0.50
-                },
-                "3":{
-                    "answer_text" : "26-50%",
-                    "answer_score" : 0.75
-                },
-                "4":{
-                    "answer_text" : "51-100%",
-                    "answer_score" : 1
-                }
-            }
-        },
-        "wh3":{
-            "question_text" :"Consumo dell'acqua - Casa [Utilizzo di strumenti e elettrodomestici efficienti (asciugamani ad aria, scarico a doppio bottone, ecc)]",
-            "question_type": "basic",
-            "question_score": "",
-            "answers": {
-                "0":{
-                    "answer_text" : "Nessun Interesse",
-                    "answer_score" : 0
-                },
-                "1":{
-                    "answer_text" : "In progetto",
-                    "answer_score" : 0.25
-                },
-                "2":{
-                    "answer_text" : "1-25%",
-                    "answer_score" : 0.50
-                },
-                "3":{
-                    "answer_text" : "26-50%",
-                    "answer_score" : 0.75
-                },
-                "4":{
-                    "answer_text" : "51-100%",
-                    "answer_score" : 1
-                }
-            }
-        },
-        "wh4":{
-            "question_text" :"Consumo dell'acqua - Casa [Consumo di acqua trattata comparata con tutte le altre fonti d'acqua]",
-            "question_type": "basic",
-            "question_score": "",
-            "answers": {
-                "0":{
-                    "answer_text" : "Nessun Interesse",
-                    "answer_score" : 0
-                },
-                "1":{
-                    "answer_text" : "In progetto",
-                    "answer_score" : 0.25
-                },
-                "2":{
-                    "answer_text" : "1-25%",
-                    "answer_score" : 0.50
-                },
-                "3":{
-                    "answer_text" : "26-50%",
-                    "answer_score" : 0.75
-                },
-                "4":{
-                    "answer_text" : "51-100%",
-                    "answer_score" : 1
-                }
-            }
-        },
-        "wastew1":{
-            "question_text" :"Rifiuti - Lavoro o Università [Vengono implementate le 3R: Riduzione, Riuso e Riciclo]",
-            "question_type": "basic",
-            "question_score": "",
-            "answers": {
-                "0":{
-                    "answer_text" : "No",
-                    "answer_score" : 0
-                },
-                "1":{
-                    "answer_text" : "In Progetto",
-                    "answer_score" : 0.25
-                },
-                "2":{
-                    "answer_text" : "1-50%",
-                    "answer_score" : 0.50
-                },
-                "3":{
-                    "answer_text" : "51-75%",
-                    "answer_score" : 0.75
-                },
-                "4":{
-                    "answer_text" : "76-100%",
-                    "answer_score" : 1
-                }
-            }
-        },
-        "wastew2":{
-            "question_text" :"Rifiuti - Lavoro o Università [C'è un'attenzione nel ridurre l'uso della plasica]",
-            "question_type": "basic",
-            "question_score": "",
-            "answers": {
-                "0":{
-                    "answer_text" : "No",
-                    "answer_score" : 0
-                },
-                "1":{
-                    "answer_text" : "In Progetto",
-                    "answer_score" : 0.25
-                },
-                "2":{
-                    "answer_text" : "1-50%",
-                    "answer_score" : 0.50
-                },
-                "3":{
-                    "answer_text" : "51-75%",
-                    "answer_score" : 0.75
-                },
-                "4":{
-                    "answer_text" : "76-100%",
-                    "answer_score" : 1
-                }
-            }
-        },
-        "wastew3":{
-            "question_text" :"Rifiuti - Lavoro o Università [C'è un'attenzione alla gestione di materiali organici]",
-            "question_type": "basic",
-            "question_score": "",
-            "answers": {
-                "0":{
-                    "answer_text" : "No",
-                    "answer_score" : 0
-                },
-                "1":{
-                    "answer_text" : "In Progetto",
-                    "answer_score" : 0.25
-                },
-                "2":{
-                    "answer_text" : "1-50%",
-                    "answer_score" : 0.50
-                },
-                "3":{
-                    "answer_text" : "51-75%",
-                    "answer_score" : 0.75
-                },
-                "4":{
-                    "answer_text" : "76-100%",
-                    "answer_score" : 1
-                }
-            }
-        },
-        "wastew4":{
-            "question_text" :"Rifiuti - Lavoro o Università [C'è un'attenzione alla gestione di materiali inorganici]",
-            "question_type": "basic",
-            "question_score": "",
-            "answers": {
-                "0":{
-                    "answer_text" : "No",
-                    "answer_score" : 0
-                },
-                "1":{
-                    "answer_text" : "In Progetto",
-                    "answer_score" : 0.25
-                },
-                "2":{
-                    "answer_text" : "1-50%",
-                    "answer_score" : 0.50
-                },
-                "3":{
-                    "answer_text" : "51-75%",
-                    "answer_score" : 0.75
-                },
-                "4":{
-                    "answer_text" : "76-100%",
-                    "answer_score" : 1
-                }
-            }
-        },
-        "wasteh1":{
-            "question_text" :"Rifiuti - Casa [Vengono implementate le 3R: Riduzione, Riuso e Riciclo]",
-            "question_type": "basic",
-            "question_score": "",
-            "answers": {
-                "0":{
-                    "answer_text" : "No",
-                    "answer_score" : 0
-                },
-                "1":{
-                    "answer_text" : "In Progetto",
-                    "answer_score" : 0.25
-                },
-                "2":{
-                    "answer_text" : "1-50%",
-                    "answer_score" : 0.50
-                },
-                "3":{
-                    "answer_text" : "51-75%",
-                    "answer_score" : 0.75
-                },
-                "4":{
-                    "answer_text" : "76-100%",
-                    "answer_score" : 1
-                }
-            }
-        },
-        "wasteh2":{
-            "question_text" :"Rifiuti - Casa [C'è un'attenzione nel ridurre l'uso della plasica]",
-            "question_type": "basic",
-            "question_score": "",
-            "answers": {
-                "0":{
-                    "answer_text" : "No",
-                    "answer_score" : 0
-                },
-                "1":{
-                    "answer_text" : "In Progetto",
-                    "answer_score" : 0.25
-                },
-                "2":{
-                    "answer_text" : "1-50%",
-                    "answer_score" : 0.50
-                },
-                "3":{
-                    "answer_text" : "51-75%",
-                    "answer_score" : 0.75
-                },
-                "4":{
-                    "answer_text" : "76-100%",
-                    "answer_score" : 1
-                }
-            }
-        },
-        "wasteh3":{
-            "question_text" :"Rifiuti - Casa [C'è un'attenzione alla gestione di materiali organici]",
-            "question_type": "basic",
-            "question_score": "",
-            "answers": {
-                "0":{
-                    "answer_text" : "No",
-                    "answer_score" : 0
-                },
-                "1":{
-                    "answer_text" : "In Progetto",
-                    "answer_score" : 0.25
-                },
-                "2":{
-                    "answer_text" : "1-50%",
-                    "answer_score" : 0.50
-                },
-                "3":{
-                    "answer_text" : "51-75%",
-                    "answer_score" : 0.75
-                },
-                "4":{
-                    "answer_text" : "76-100%",
-                    "answer_score" : 1
-                }
-            }
-        },
-        "wasteh4":{
-            "question_text" :"Rifiuti - Casa [C'è un'attenzione alla gestione di materiali inorganici]",
-            "question_type": "basic",
-            "question_score": "",
-            "answers": {
-                "0":{
-                    "answer_text" : "No",
-                    "answer_score" : 0
-                },
-                "1":{
-                    "answer_text" : "In Progetto",
-                    "answer_score" : 0.25
-                },
-                "2":{
-                    "answer_text" : "1-50%",
-                    "answer_score" : 0.50
-                },
-                "3":{
-                    "answer_text" : "51-75%",
-                    "answer_score" : 0.75
-                },
-                "4":{
-                    "answer_text" : "76-100%",
-                    "answer_score" : 1
-                }
-            }
+        "4": {
+          "answer_text": "Superiore al 75%",
+          "answer_score": 1
         }
+      }
+    },
 
-    
+    "eh2": {
+      "question_text": "Seleziona se possiedi uno dei seguenti sistemi?",
+      "question_type": "comma_separated",
+      "question_score": ""
+    },
+
+    "eh3": {
+      "question_text": "Seleziona quali sistemi di fonti rinnovabili possiedi?",
+      "question_type": "comma_separated",
+      "question_score": ""
+    },
+
+    "eh4": {
+      "question_text": "Quanto, in percentuale, pensi che gli impianti rinnovabili che si possiedono producano rispetto a ciò che consumi?",
+      "question_type": "basic",
+      "question_score": "",
+      "answers": {
+        "0": {
+          "answer_text": "Non possiedo nessun impianto",
+          "answer_score": 0
+        },
+        "1": {
+          "answer_text": "Meno del 25 %",
+          "answer_score": 0.25
+        },
+        "2": {
+          "answer_text": "Tra il 26 e il 50 %",
+          "answer_score": 0.5
+        },
+        "3": {
+          "answer_text": "Tra il 51 e il 75 %",
+          "answer_score": 0.75
+        },
+        "4": {
+          "answer_text": "Più del 75%",
+          "answer_score": 1
+        }
+      }
+    },
+    "eh5": {
+      "question_text": "Qual è il kilowattaggio del tuo impianto elettrico?",
+      "question_type": "basic",
+      "question_score": 0,
+      "answers": {
+        "0": {
+          "answer_text": "3 kWh",
+          "answer_score": 3
+        },
+        "1": {
+          "answer_text": "4.5 kWh",
+          "answer_score": 4.5
+        },
+        "2": {
+          "answer_text": "6 kWh",
+          "answer_score": 6
+        }
+      }
+    },
+    "eh6": {
+      "question_text": "La tua casa rispecchia i seguenti elementi di Green Building Implementation?",
+      "question_type": "comma_separated",
+      "question_score": ""
+    },
+
+    "ew1": {
+      "question_text": "Qual è la percentuale di prodotti elettronici efficienti che il tuo luogo di lavoro/ la tua università possiede?",
+      "question_type": "basic",
+      "question_score": "",
+      "answers": {
+        "0": {
+          "answer_text": "Minore dell'1%",
+          "answer_score": 0
+        },
+        "1": {
+          "answer_text": "Meno del 25%",
+          "answer_score": 0.25
+        },
+        "2": {
+          "answer_text": "Tra il 25 e il 50%",
+          "answer_score": 0.5
+        },
+        "3": {
+          "answer_text": "Tra il 51 e il 75%",
+          "answer_score": 0.75
+        },
+        "4": {
+          "answer_text": "Superiore al 75%",
+          "answer_score": 1
+        }
+      }
+    },
+
+    "ew2": {
+      "question_text": "Seleziona se il tuo luogo di lavoro/la tua università possiede uno dei seguenti sistemi?",
+      "question_type": "comma_separated",
+      "question_score": ""
+    },
+
+    "ew3": {
+      "question_text": "Seleziona quali sistemi di fonti rinnovabili possiede il tuo luogo di lavoro/la tua università?",
+      "question_type": "comma_separated",
+      "question_score": ""
+    },
+
+    "ew4": {
+      "question_text": "Quanto, in percentuale, pensi che gli impianti rinnovabili del tuo luogo di lavoro/della tua università producano rispetto a ciò che viene consumato?",
+      "question_type": "basic",
+      "question_score": "",
+      "answers": {
+        "0": {
+          "answer_text": "Non possiedo nessun impianto",
+          "answer_score": 0
+        },
+        "1": {
+          "answer_text": "Meno del 25 %",
+          "answer_score": 0.25
+        },
+        "2": {
+          "answer_text": "Tra il 26 e il 50 %",
+          "answer_score": 0.5
+        },
+        "3": {
+          "answer_text": "Tra il 51 e il 75 %",
+          "answer_score": 0.75
+        },
+        "4": {
+          "answer_text": "Più del 75%",
+          "answer_score": 1
+        }
+      }
+    },
+    "ew5": {
+      "question_text": "Il tuo luogo di lavoro/la tua università rispecchia i seguenti elementi di Green Building Implementation?",
+      "question_type": "comma_separated",
+      "question_score": ""
+    },
+
+    "ww1": {
+      "question_text": "Consumo dell'acqua - Lavoro o Università [Programma di conservazione dell'acqua]",
+      "question_type": "basic",
+      "question_score": "",
+      "answers": {
+        "0": {
+          "answer_text": "Nessun Interesse",
+          "answer_score": 0
+        },
+        "1": {
+          "answer_text": "In progetto",
+          "answer_score": 0.25
+        },
+        "2": {
+          "answer_text": "1-25%",
+          "answer_score": 0.5
+        },
+        "3": {
+          "answer_text": "26-50%",
+          "answer_score": 0.75
+        },
+        "4": {
+          "answer_text": "51-100%",
+          "answer_score": 1
+        }
+      }
+    },
+    "ww2": {
+      "question_text": "Consumo dell'acqua - Lavoro o Università [Programma di riciclo dell'acqua]",
+      "question_type": "basic",
+      "question_score": "",
+      "answers": {
+        "0": {
+          "answer_text": "Nessun Interesse",
+          "answer_score": 0
+        },
+        "1": {
+          "answer_text": "In progetto",
+          "answer_score": 0.25
+        },
+        "2": {
+          "answer_text": "1-25%",
+          "answer_score": 0.5
+        },
+        "3": {
+          "answer_text": "26-50%",
+          "answer_score": 0.75
+        },
+        "4": {
+          "answer_text": "51-100%",
+          "answer_score": 1
+        }
+      }
+    },
+    "ww3": {
+      "question_text": "Consumo dell'acqua - Lavoro o Università [Utilizzo di strumenti e elettrodomestici efficienti (asciugamani ad aria, scarico a doppio bottone, ecc)]",
+      "question_type": "basic",
+      "question_score": "",
+      "answers": {
+        "0": {
+          "answer_text": "Nessun Interesse",
+          "answer_score": 0
+        },
+        "1": {
+          "answer_text": "In progetto",
+          "answer_score": 0.25
+        },
+        "2": {
+          "answer_text": "1-25%",
+          "answer_score": 0.5
+        },
+        "3": {
+          "answer_text": "26-50%",
+          "answer_score": 0.75
+        },
+        "4": {
+          "answer_text": "51-100%",
+          "answer_score": 1
+        }
+      }
+    },
+    "ww4": {
+      "question_text": "Consumo dell'acqua - Lavoro o Università [Consumo di acqua trattata comparata con tutte le altre fonti d'acqua]",
+      "question_type": "basic",
+      "question_score": "",
+      "answers": {
+        "0": {
+          "answer_text": "Nessun Interesse",
+          "answer_score": 0
+        },
+        "1": {
+          "answer_text": "In progetto",
+          "answer_score": 0.25
+        },
+        "2": {
+          "answer_text": "1-25%",
+          "answer_score": 0.5
+        },
+        "3": {
+          "answer_text": "26-50%",
+          "answer_score": 0.75
+        },
+        "4": {
+          "answer_text": "51-100%",
+          "answer_score": 1
+        }
+      }
+    },
+    "wh1": {
+      "question_text": "Consumo dell'acqua - Casa [Programma di conservazione dell'acqua]",
+      "question_type": "basic",
+      "question_score": "",
+      "answers": {
+        "0": {
+          "answer_text": "Nessun Interesse",
+          "answer_score": 0
+        },
+        "1": {
+          "answer_text": "In progetto",
+          "answer_score": 0.25
+        },
+        "2": {
+          "answer_text": "1-25%",
+          "answer_score": 0.5
+        },
+        "3": {
+          "answer_text": "26-50%",
+          "answer_score": 0.75
+        },
+        "4": {
+          "answer_text": "51-100%",
+          "answer_score": 1
+        }
+      }
+    },
+    "wh2": {
+      "question_text": "Consumo dell'acqua - Casa [Programma di riciclo dell'acqua]",
+      "question_type": "basic",
+      "question_score": "",
+      "answers": {
+        "0": {
+          "answer_text": "Nessun Interesse",
+          "answer_score": 0
+        },
+        "1": {
+          "answer_text": "In progetto",
+          "answer_score": 0.25
+        },
+        "2": {
+          "answer_text": "1-25%",
+          "answer_score": 0.5
+        },
+        "3": {
+          "answer_text": "26-50%",
+          "answer_score": 0.75
+        },
+        "4": {
+          "answer_text": "51-100%",
+          "answer_score": 1
+        }
+      }
+    },
+    "wh3": {
+      "question_text": "Consumo dell'acqua - Casa [Utilizzo di strumenti e elettrodomestici efficienti (asciugamani ad aria, scarico a doppio bottone, ecc)]",
+      "question_type": "basic",
+      "question_score": "",
+      "answers": {
+        "0": {
+          "answer_text": "Nessun Interesse",
+          "answer_score": 0
+        },
+        "1": {
+          "answer_text": "In progetto",
+          "answer_score": 0.25
+        },
+        "2": {
+          "answer_text": "1-25%",
+          "answer_score": 0.5
+        },
+        "3": {
+          "answer_text": "26-50%",
+          "answer_score": 0.75
+        },
+        "4": {
+          "answer_text": "51-100%",
+          "answer_score": 1
+        }
+      }
+    },
+    "wh4": {
+      "question_text": "Consumo dell'acqua - Casa [Consumo di acqua trattata comparata con tutte le altre fonti d'acqua]",
+      "question_type": "basic",
+      "question_score": "",
+      "answers": {
+        "0": {
+          "answer_text": "Nessun Interesse",
+          "answer_score": 0
+        },
+        "1": {
+          "answer_text": "In progetto",
+          "answer_score": 0.25
+        },
+        "2": {
+          "answer_text": "1-25%",
+          "answer_score": 0.5
+        },
+        "3": {
+          "answer_text": "26-50%",
+          "answer_score": 0.75
+        },
+        "4": {
+          "answer_text": "51-100%",
+          "answer_score": 1
+        }
+      }
+    },
+    "wastew1": {
+      "question_text": "Rifiuti - Lavoro o Università [Vengono implementate le 3R: Riduzione, Riuso e Riciclo]",
+      "question_type": "basic",
+      "question_score": "",
+      "answers": {
+        "0": {
+          "answer_text": "No",
+          "answer_score": 0
+        },
+        "1": {
+          "answer_text": "In Progetto",
+          "answer_score": 0.25
+        },
+        "2": {
+          "answer_text": "1-50%",
+          "answer_score": 0.5
+        },
+        "3": {
+          "answer_text": "51-75%",
+          "answer_score": 0.75
+        },
+        "4": {
+          "answer_text": "76-100%",
+          "answer_score": 1
+        }
+      }
+    },
+    "wastew2": {
+      "question_text": "Rifiuti - Lavoro o Università [C'è un'attenzione nel ridurre l'uso della plasica]",
+      "question_type": "basic",
+      "question_score": "",
+      "answers": {
+        "0": {
+          "answer_text": "No",
+          "answer_score": 0
+        },
+        "1": {
+          "answer_text": "In Progetto",
+          "answer_score": 0.25
+        },
+        "2": {
+          "answer_text": "1-50%",
+          "answer_score": 0.5
+        },
+        "3": {
+          "answer_text": "51-75%",
+          "answer_score": 0.75
+        },
+        "4": {
+          "answer_text": "76-100%",
+          "answer_score": 1
+        }
+      }
+    },
+    "wastew3": {
+      "question_text": "Rifiuti - Lavoro o Università [C'è un'attenzione alla gestione di materiali organici]",
+      "question_type": "basic",
+      "question_score": "",
+      "answers": {
+        "0": {
+          "answer_text": "No",
+          "answer_score": 0
+        },
+        "1": {
+          "answer_text": "In Progetto",
+          "answer_score": 0.25
+        },
+        "2": {
+          "answer_text": "1-50%",
+          "answer_score": 0.5
+        },
+        "3": {
+          "answer_text": "51-75%",
+          "answer_score": 0.75
+        },
+        "4": {
+          "answer_text": "76-100%",
+          "answer_score": 1
+        }
+      }
+    },
+    "wastew4": {
+      "question_text": "Rifiuti - Lavoro o Università [C'è un'attenzione alla gestione di materiali inorganici]",
+      "question_type": "basic",
+      "question_score": "",
+      "answers": {
+        "0": {
+          "answer_text": "No",
+          "answer_score": 0
+        },
+        "1": {
+          "answer_text": "In Progetto",
+          "answer_score": 0.25
+        },
+        "2": {
+          "answer_text": "1-50%",
+          "answer_score": 0.5
+        },
+        "3": {
+          "answer_text": "51-75%",
+          "answer_score": 0.75
+        },
+        "4": {
+          "answer_text": "76-100%",
+          "answer_score": 1
+        }
+      }
+    },
+    "wasteh1": {
+      "question_text": "Rifiuti - Casa [Vengono implementate le 3R: Riduzione, Riuso e Riciclo]",
+      "question_type": "basic",
+      "question_score": "",
+      "answers": {
+        "0": {
+          "answer_text": "No",
+          "answer_score": 0
+        },
+        "1": {
+          "answer_text": "In Progetto",
+          "answer_score": 0.25
+        },
+        "2": {
+          "answer_text": "1-50%",
+          "answer_score": 0.5
+        },
+        "3": {
+          "answer_text": "51-75%",
+          "answer_score": 0.75
+        },
+        "4": {
+          "answer_text": "76-100%",
+          "answer_score": 1
+        }
+      }
+    },
+    "wasteh2": {
+      "question_text": "Rifiuti - Casa [C'è un'attenzione nel ridurre l'uso della plasica]",
+      "question_type": "basic",
+      "question_score": "",
+      "answers": {
+        "0": {
+          "answer_text": "No",
+          "answer_score": 0
+        },
+        "1": {
+          "answer_text": "In Progetto",
+          "answer_score": 0.25
+        },
+        "2": {
+          "answer_text": "1-50%",
+          "answer_score": 0.5
+        },
+        "3": {
+          "answer_text": "51-75%",
+          "answer_score": 0.75
+        },
+        "4": {
+          "answer_text": "76-100%",
+          "answer_score": 1
+        }
+      }
+    },
+    "wasteh3": {
+      "question_text": "Rifiuti - Casa [C'è un'attenzione alla gestione di materiali organici]",
+      "question_type": "basic",
+      "question_score": "",
+      "answers": {
+        "0": {
+          "answer_text": "No",
+          "answer_score": 0
+        },
+        "1": {
+          "answer_text": "In Progetto",
+          "answer_score": 0.25
+        },
+        "2": {
+          "answer_text": "1-50%",
+          "answer_score": 0.5
+        },
+        "3": {
+          "answer_text": "51-75%",
+          "answer_score": 0.75
+        },
+        "4": {
+          "answer_text": "76-100%",
+          "answer_score": 1
+        }
+      }
+    },
+    "wasteh4": {
+      "question_text": "Rifiuti - Casa [C'è un'attenzione alla gestione di materiali inorganici]",
+      "question_type": "basic",
+      "question_score": "",
+      "answers": {
+        "0": {
+          "answer_text": "No",
+          "answer_score": 0
+        },
+        "1": {
+          "answer_text": "In Progetto",
+          "answer_score": 0.25
+        },
+        "2": {
+          "answer_text": "1-50%",
+          "answer_score": 0.5
+        },
+        "3": {
+          "answer_text": "51-75%",
+          "answer_score": 0.75
+        },
+        "4": {
+          "answer_text": "76-100%",
+          "answer_score": 1
+        }
+      }
     }
-
+  }
 }
