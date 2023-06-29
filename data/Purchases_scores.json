@@ -405,7 +405,7 @@
             }
         },
         "ER_3" : {
-            "Text" : "La presenza di strutture "green" all'interno del proprio campus e/o della propria azienda che siano accessibili al pubblico, per esempio durante attività culturali, indicano un impatto più ampio di tali strutture nei loro dintorni (Festival Culturali, teatro, performance musicali, esibizioni, attività virtuali, etc.). Selezionare una delle seguenti opzioni:",
+            "Text" : "La presenza di strutture \"green\" all'interno del proprio campus e/o della propria azienda che siano accessibili al pubblico, per esempio durante attività culturali, indicano un impatto più ampio di tali strutture nei loro dintorni (Festival Culturali, teatro, performance musicali, esibizioni, attività virtuali, etc.). Selezionare una delle seguenti opzioni:",
             "Score" : 100,
             "Answers" : {
                 "0" : {
