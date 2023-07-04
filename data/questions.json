@@ -73,7 +73,7 @@
         "answer_score": 0
       },
       "1": {
-        "answer_text": "Vorrei servirmi di mercatini biologici ma non sono presenti nella mia città",
+        "answer_text": "Vorrei servirmi dei mercatini biologici ma non sono presenti nella mia città",
         "answer_score": 0.25
       },
       "2": {
@@ -96,7 +96,7 @@
     "question_type": "basic",
     "answers": {
       "0": {
-        "answer_text": "No, non ero a conoscenza",
+        "answer_text": "No, non ne ero a conoscenza",
         "answer_score": 0
       },
       "1": {
@@ -104,11 +104,11 @@
         "answer_score": 0.33
       },
       "2": {
-        "answer_text": "Si ma raramente (media di 2 volte al mese)",
+        "answer_text": "Sì ma raramente (media di 2 volte al mese)",
         "answer_score": 0.66
       },
       "3": {
-        "answer_text": "Si ",
+        "answer_text": "Sì ",
         "answer_score": 1
       }
     }
@@ -123,15 +123,15 @@
         "answer_score": 0
       },
       "1": {
-        "answer_text": "Si, ma hanno un prezzo elevato",
+        "answer_text": "Sì, ma hanno un prezzo elevato",
         "answer_score": 0.33
       },
       "2": {
-        "answer_text": "Si, raramente acquisto prodotti con etichetta ecologica ",
+        "answer_text": "Sì, raramente acquisto prodotti con etichetta ecologica",
         "answer_score": 0.66
       },
       "3": {
-        "answer_text": "Si, acquisto spesso prodotti con etichetta ecologica  ",
+        "answer_text": "Sì, acquisto solo prodotti con etichetta ecologica",
         "answer_score": 1
       }
     }
@@ -196,7 +196,7 @@
         "answer_score": 0.33
       },
       "2": {
-        "answer_text": "Riacquisto i prodotti, non vi sono servizi alla spina",
+        "answer_text": "Riacquisto le casse di acqua, non sono presenti distributori all'interno della mia città",
         "answer_score": 0.66
       },
       "3": {
@@ -446,7 +446,7 @@
     }
   },
   "m_3": {
-    "question_text": "In quale classe ambientale si trova il veicolo che usi quotidianamente? (basati sull'anno di immatricolazione se non conosci la classe)",
+    "question_text": "In quale classe ambientale Sì trova il veicolo che usi quotidianamente? (basati sull'anno di immatricolazione se non conosci la classe)",
     "question_score": 300,
     "question_type": "basic",
     "answers": {
@@ -1011,7 +1011,7 @@
     "answers": {}
   },
   "eh4": {
-    "question_text": "Quanto, in percentuale, pensi che gli impianti rinnovabili che si possiedono producano rispetto a ciò che consumi?",
+    "question_text": "Quanto, in percentuale, pensi che gli impianti rinnovabili che Sì possiedono producano rispetto a ciò che consumi?",
     "question_type": "basic",
     "question_score": "",
     "answers": {
