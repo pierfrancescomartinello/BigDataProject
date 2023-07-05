@@ -36,9 +36,10 @@
 
 ## Indexes
 
-1. SI1, SI3: The ratio of open space area to the total area (personal) = (9.)/(10.) (300pt)
+1. SI1, SI3: The ratio of open space area to the total area (personal) = (9.)/(10.) (100pt)
 
-2. SI1, SI3: The ratio of open space area to the total area (work) = (19.)/(18.) (300pt)
+2. SI1, SI3: The ratio of open space area to the total area (work) = (19.)/(18.) (100pt)
+
 3. SI5: The total open space area divided by the total family size = (10.)/(0.) (300pt)
 
 4. SI6: Percentage of budget for sustainability efforts = (13.)/(12.)+(13.)+(14.) (300pt)
