@@ -833,7 +833,7 @@
   "eh4": {
     "question_text": "Quanto, in percentuale, pensi che gli impianti rinnovabili che si possiedono producano rispetto a ciò che consumi?",
     "question_type": "basic",
-    "question_score": 200,
+    "question_score": 1,
     "answers": {
       "Non possiedo nessun impianto": {
         "answer_score": 0
@@ -911,7 +911,7 @@
   "ew4": {
     "question_text": "Quanto, in percentuale, pensi che gli impianti rinnovabili del tuo luogo di lavoro/della tua università producano rispetto a ciò che viene consumato?",
     "question_type": "basic",
-    "question_score": 200,
+    "question_score": 1,
     "answers": {
       "Non possiedo nessun impianto": {
         "answer_score": 0
