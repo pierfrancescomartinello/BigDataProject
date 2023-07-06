@@ -198,19 +198,24 @@
     "question_type": "basic",
     "answers": {
       "1": {
-        "answer_score": 0
+        "answer_score": 0,
+        "answer_score_1" : 1
       },
       "2": {
-        "answer_score": 0.25
+        "answer_score": 0.25,
+        "answer_score_1" : 2
       },
       "3": {
-        "answer_score": 0.5
+        "answer_score": 0.5,
+        "answer_score_1" : 3
       },
       "4": {
-        "answer_score": 0.75
+        "answer_score": 0.75,
+        "answer_score_1" : 4
       },
       "5": {
-        "answer_score": 1
+        "answer_score": 1,
+        "answer_score_1" : 5
       }
     }
   },
