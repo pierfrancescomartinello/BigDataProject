@@ -197,11 +197,11 @@
     "question_score": 150,
     "question_type": "basic",
     "answers": {
-      "1": {
+      "1":{
         "answer_score": 0,
         "answer_score_1" : 1
       },
-      "2": {
+      "2":{
         "answer_score": 0.25,
         "answer_score_1" : 2
       },
