@@ -29,11 +29,3 @@ Sugli indici:
 
 FILE RELAZIONE: https://docs.google.com/document/d/1bN15nY9FsXP09H9o8yU5D-akL_E0Q3rWulb8GtvwNIE/edit?usp=sharing
 FILE FORM: https://docs.google.com/forms/u/3/d/1SmtztrpYKhO-mlL8kVkc0S-jYID0oo97mc1dBdCPC38/edit?usp=forms_home&ths=true
-
-Todo:
-- modificare i range sulla spesa: non stile "2-3" ma più larghi (o direttamente puntuali) come "2-5" (o 2, 3, ...); basarsi sul caso individuale per capire quando e come è il caso di cambiare
-- le domande devono essere meno discorsive
-    - si perde il focus della domanda
-    - la professoressa suggerisce di rimuovere cappelli vari e accorciare/rimuovere molte descrizioni
-- in generale, sostituire "solo" con "molto" o "spesso". Per esempio, cambiare "acquisto SOLO prodotti di questo tipo" in "acquisto spesso prodotti di questo tipo"
-- c'è una descrizione inerente a "prodotti per la casa e indumenti" ma la domanda non riguarda gli indumenti
