@@ -607,7 +607,7 @@
   },
   "m_13": {
     "question_text": "Quanto spendi mensilmente in trasporti pubblici?",
-    "question_score": 0,
+    "question_score": 200,
     "question_type": "basic",
     "answers": {
       "0€": {
@@ -939,7 +939,7 @@
   "ww1": {
     "question_text": "Consumo dell'acqua - Lavoro o Università [Programma di conservazione dell'acqua]",
     "question_type": "basic",
-    "question_score": 300,
+    "question_score": 200,
     "answers": {
       "Nessun Interesse": {
         "answer_score": 0
