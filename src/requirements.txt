@@ -1,5 +1,0 @@
-pyspark
-pyspark[sql]
-pyspark[connect]
-pyspark[pandas_on_spark] 
-plotly  
