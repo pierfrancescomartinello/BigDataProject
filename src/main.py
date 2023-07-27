@@ -2,7 +2,7 @@ import json
 from pyspark.sql import SparkSession
 
 if __name__ == "__main__":
-    spark = SparkSession.builder.appName("test").getOrCreate()
+    spark = SparkSession.builder.appName("test").getOrCreate() # type: ignore
 
     poll_dir = "data/poll_data.csv"
 
