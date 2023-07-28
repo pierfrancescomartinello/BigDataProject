@@ -5,6 +5,8 @@ from pyspark.ml.recommendation import ALS
 from pyspark.sql import SparkSession
 import pandas as pd
 
+from poll_processing import execute_pipeline, directories, init_spark
+
 
 def run_collaborative_filtering(
     spark: SparkSession,
@@ -94,3 +96,8 @@ def run_kmeans(spark: SparkSession, df_indexes) -> None:
     print(summary.clusterSizes)
 
     summary.cluster.show(52)
+
+
+if __name__ == "__main__":
+    spark = init_spark()
+    df = execute_pipeline(spark, directories)

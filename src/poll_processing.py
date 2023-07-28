@@ -1,11 +1,16 @@
 import json
 import os
 from pathlib import Path
-import sys
 
 import pyspark.pandas as pd
 from pyspark.sql import DataFrame, SparkSession
 
+# directories used throughout the pipeline
+directories = [
+    str(Path(r"./data/poll_data.csv")),
+    str(Path(r"./data/questions.json")),
+    str(Path(r"./data/df_indexes.csv")),
+]
 
 def init_spark() -> SparkSession:
     spark: SparkSession = SparkSession.builder.master("local[*]").appName("poll_to_idxs").getOrCreate()  # type: ignore
@@ -445,13 +450,6 @@ def execute_pipeline(
 
 
 if __name__ == "__main__":
-    # directories used throughout the pipeline
-    directories = [
-        str(Path(r"./data/poll_data.csv")),
-        str(Path(r"./data/questions.json")),
-        str(Path(r"./data/df_indexes.csv")),
-    ]
-
     # create SparkSession instance
     spark = init_spark()
 
