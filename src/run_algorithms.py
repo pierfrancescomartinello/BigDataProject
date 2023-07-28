@@ -10,7 +10,7 @@ import os
 
 os.environ["PYARROW_IGNORE_TIMEZONE"] = "1"
 os.environ["SPARK_LOCAL_IP"] = "127.0.0.1"
-os.environ["PYSPARK_PYTHON"] = "python"
+os.environ["PYSPARK_PYTHON"] = "python" if os.name != "posix" else "python3"
 
 def add_nan_values(df: pd.DataFrame, percent: float = 0.1) -> pd.DataFrame:
     celle_el = []
@@ -124,5 +124,7 @@ if __name__ == "__main__":
     # df = add_nan_values(df[df.columns[1:]], percent=0.1)
     model = run_collaborative_filtering(spark, df)
 
-    model.recommendForAllItems(52).show(truncate=False)
-    model.recommendForAllUsers(25).show(truncate=False)
+    #model.recommendForAllItems(52).show(truncate=False)
+    print(model.recommendForAllItems(52).toPandas())
+    #print(model_pd)
+    print(model.recommendForAllUsers(25).toPandas())
