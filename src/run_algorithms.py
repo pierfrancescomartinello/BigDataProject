@@ -119,7 +119,7 @@ if __name__ == "__main__":
     spark = init_spark()
     df = execute_pipeline(spark, directories).toPandas()
 
-    run_kmeans(spark, df)
+    # run_kmeans(spark, df)
 
     # df = add_nan_values(df[df.columns[1:]], percent=0.1)
     model = run_collaborative_filtering(spark, df)
