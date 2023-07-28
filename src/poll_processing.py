@@ -2,8 +2,10 @@ import json
 import os
 from pathlib import Path
 
-import pyspark.pandas as pd
-from pyspark.sql import DataFrame, SparkSession
+import pyspark.sql
+import pyspark.pandas
+import pandas as pd
+from pyspark.sql import SparkSession
 
 # directories used throughout the pipeline
 directories = [
@@ -11,6 +13,7 @@ directories = [
     str(Path(r"./data/questions.json")),
     str(Path(r"./data/df_indexes.csv")),
 ]
+
 
 def init_spark() -> SparkSession:
     spark: SparkSession = SparkSession.builder.master("local[*]").appName("poll_to_idxs").getOrCreate()  # type: ignore
@@ -22,9 +25,9 @@ def init_spark() -> SparkSession:
 
 
 def preprocess_poll(
-    df: DataFrame,
+    df: pyspark.sql.DataFrame,
     questions: dict,
-) -> DataFrame:
+) -> pyspark.sql.DataFrame:
     # create a question_text:question_idx map, useful to alias the columns
     questions_idxs = {questions[q]["question_text"]: q for q in questions.keys()}
 
@@ -36,9 +39,9 @@ def preprocess_poll(
 
 
 def compute_scores_df(
-    df: DataFrame,
+    df: pyspark.sql.DataFrame,
     questions: dict,
-) -> DataFrame:
+) -> pyspark.sql.DataFrame:
     # list of columns that will not be individually scored (due to not being used in the calculation)
     skip_cols = [
         "Ho letto e accettato l'informativa e confermo inoltre di avere più di 18 anni",
@@ -94,12 +97,16 @@ def compute_scores_df(
             scores[col] = row_scores
 
     # Create the scores dataframe from the scores dictionary
-    df_scores = pd.DataFrame(scores).to_spark(index_col="_c0")
+    df_scores = pyspark.pandas.DataFrame(scores).to_spark(index_col="_c0")
 
     return df_scores
 
 
-def compute_indexes(df: DataFrame, df_scores: DataFrame, questions: dict):
+def compute_indexes(
+    df: pyspark.sql.DataFrame,
+    df_scores: pyspark.sql.DataFrame,
+    questions: dict,
+) -> dict:
     # The indexes dictionary, which will be used to compute the indexes dataframe
     indexes_cols = {}
 
@@ -364,9 +371,9 @@ def compute_indexes(df: DataFrame, df_scores: DataFrame, questions: dict):
     return indexes_cols
 
 
-def normalize_scores_df(spark: SparkSession, indexes_cols: list) -> DataFrame:
-    indexes_cols_df = pd.DataFrame(indexes_cols)
-
+def normalize_scores_df(
+    indexes_df: pd.DataFrame,
+) -> pd.DataFrame:
     indexes_max = {
         # "i_S": None,
         # "i_tot_S": None,
@@ -395,14 +402,14 @@ def normalize_scores_df(spark: SparkSession, indexes_cols: list) -> DataFrame:
         "i_e11": 200,
     }
 
-    for c in indexes_cols_df.columns:
-        val = indexes_cols_df[c] / indexes_max.get(c, indexes_cols_df[c].max())
-        indexes_cols_df[c] = round(val, 3)
+    for c in indexes_df.columns:
+        val = indexes_df[c] / indexes_max.get(c, indexes_df[c].max())
+        indexes_df[c] = round(val, 3)
 
     # create the indexes dataframe from the indexes dictionary
-    df_indexes = spark.createDataFrame(pd.DataFrame(indexes_cols_df))
+    # df_indexes = spark.createDataFrame(pd.DataFrame(indexes_df))
 
-    return df_indexes
+    return indexes_df
 
 
 def execute_pipeline(
@@ -427,21 +434,27 @@ def execute_pipeline(
 
     # skip pipeline by reading from disk if indexes_df already exists
     if not os.path.exists(df_indexes_dir) or overwrite:
-        # preprocess poll csv and compute the scores df
+        # preprocess poll csv and compute the scores df (spark DF)
         df_processed = preprocess_poll(df, questions)
+
+        # uses a spark df to compute scores and returns another spark df
         df_scores = compute_scores_df(df_processed, questions)
 
-        # compute indexes and create a pd.DataFrame, to be converted later
+        # compute indexes, return as a dictionary and convert it to pd.DF
         indexes = compute_indexes(df_processed, df_scores, questions)
-        df_indexes = pd.DataFrame(indexes).to_pandas()
+        df_indexes = pd.DataFrame(indexes)
+
+        # normalize df
+        df_indexes = normalize_scores_df(df_indexes)
 
         # write pd.DataFrame to disk for caching
         df_indexes.to_csv(df_indexes_dir, index_label="_c0")
 
+        # convert to spark dataframe
         df_indexes = spark.createDataFrame(df_indexes)
     else:
         # load indexes from disk and parse it using pandas
-        df_indexes = pd.read_csv(df_indexes_dir, index_col="_c0")
+        df_indexes = pyspark.pandas.read_csv(df_indexes_dir, index_col="_c0")
 
         # convert pd-on-spark DF to spark DF
         df_indexes = df_indexes.to_spark(index_col="_c0")
