@@ -26,9 +26,9 @@ def add_nan_values(df: pd.DataFrame, percent: float = 0.1) -> pd.DataFrame:
             celle_el.append(cel)
             c += 1
 
-    print(df.shape)
-    print(celle_el)
-    print(len(celle_el))
+    # print(df.shape)
+    # print(celle_el)
+    # print(len(celle_el))
 
     return df
 
@@ -41,8 +41,8 @@ def run_collaborative_filtering(
 
     rows = []
     for i in user_id:
-        for index, c in enumerate(df):
-            rows.append((i, index, df.iloc[i][index]))
+        for j, _ in enumerate(df):
+            rows.append((i, j, df.iloc[i][j]))
 
     cf_df = pd.DataFrame(rows, columns=["user_id", "feature_id", "value"])
     cf_df = spark.createDataFrame(cf_df)
@@ -58,7 +58,7 @@ def run_collaborative_filtering(
         userCol="user_id",
         itemCol="feature_id",
         ratingCol="value",
-        coldStartStrategy="drop",
+        coldStartStrategy="nan",
     )
 
     model = als.fit(training)
