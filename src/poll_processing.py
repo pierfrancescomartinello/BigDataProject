@@ -1,28 +1,25 @@
 import json
-from pathlib import Path
-import pandas as pd
-from pyspark.sql import SparkSession, DataFrame
 import os
+from pathlib import Path
+import sys
+
+import pyspark.pandas as pd
+from pyspark.sql import DataFrame, SparkSession
 
 
 def init_spark() -> SparkSession:
-    return SparkSession.builder.master("local[*]").appName("poll_to_idxs").getOrCreate()  # type: ignore
+    spark: SparkSession = SparkSession.builder.master("local[*]").appName("poll_to_idxs").getOrCreate()  # type: ignore
+
+    # ? doesn't work for some reason
+    spark.sparkContext.setLogLevel("ERROR")
+
+    return spark
 
 
 def preprocess_poll(
-    spark: SparkSession,
-    poll_dir: str,
+    df: DataFrame,
     questions: dict,
 ) -> DataFrame:
-    # load the csv poll as a dataframe
-    df = (
-        spark.read.format("csv")
-        .option("encoding", "UTF-8")
-        .option("header", "true")
-        .option("inferSchema", "true")
-        .load(poll_dir)
-    )
-
     # create a question_text:question_idx map, useful to alias the columns
     questions_idxs = {questions[q]["question_text"]: q for q in questions.keys()}
 
@@ -34,7 +31,6 @@ def preprocess_poll(
 
 
 def compute_scores_df(
-    spark: SparkSession,
     df: DataFrame,
     questions: dict,
 ) -> DataFrame:
@@ -93,7 +89,7 @@ def compute_scores_df(
             scores[col] = row_scores
 
     # Create the scores dataframe from the scores dictionary
-    df_scores = spark.createDataFrame(pd.DataFrame(scores))
+    df_scores = pd.DataFrame(scores).to_spark(index_col="_c0")
 
     return df_scores
 
@@ -408,31 +404,42 @@ def execute_pipeline(
     spark: SparkSession,
     dirs: list,
     overwrite: bool = False,
-) -> DataFrame:
+):
     poll_dir, questions_dir, df_indexes_dir = dirs
+
+    # load the csv poll as a dataframe
+    df = (
+        spark.read.format("csv")
+        .option("encoding", "UTF-8")
+        .option("header", "true")
+        .option("inferSchema", "true")
+        .load(poll_dir)
+    )
 
     # load the questions json
     with open(questions_dir, "r", encoding="utf-8") as questions_file:
         questions = json.load(questions_file)
 
-    # skip pipeline if indexes_df already exists
-    if not os.path.exists(df_indexes_dir) and overwrite:
+    # skip pipeline by reading from disk if indexes_df already exists
+    if not os.path.exists(df_indexes_dir) or overwrite:
         # preprocess poll csv and compute the scores df
-        df_raw = preprocess_poll(spark, poll_dir, questions)
-        df_scores = compute_scores_df(spark, df_raw, questions)
+        df_processed = preprocess_poll(df, questions)
+        df_scores = compute_scores_df(df_processed, questions)
 
         # compute indexes and create a pd.DataFrame, to be converted later
-        indexes = compute_indexes(df_raw, df_scores, questions)
-        pd_df_indexes = pd.DataFrame(indexes)
+        indexes = compute_indexes(df_processed, df_scores, questions)
+        df_indexes = pd.DataFrame(indexes).to_pandas()
 
         # write pd.DataFrame to disk for caching
-        pd_df_indexes.to_csv(df_indexes_dir)
+        df_indexes.to_csv(df_indexes_dir, index_label="_c0")
+
+        df_indexes = spark.createDataFrame(df_indexes)
     else:
         # load indexes from disk and parse it using pandas
-        pd_df_indexes = pd.read_csv(df_indexes_dir)
+        df_indexes = pd.read_csv(df_indexes_dir, index_col="_c0")
 
-    # create spark df starting from a pd.DataFrame
-    df_indexes = spark.createDataFrame(pd_df_indexes)
+        # convert pd-on-spark DF to spark DF
+        df_indexes = df_indexes.to_spark(index_col="_c0")
 
     return df_indexes
 
