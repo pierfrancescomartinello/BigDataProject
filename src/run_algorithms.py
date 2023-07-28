@@ -175,30 +175,11 @@ if __name__ == "__main__":
     spark = init_spark()
     df = execute_pipeline(spark, directories).toPandas()
 
-    run_kmeans(spark, df)
+    # run_kmeans(spark, df)
 
-    # # df = add_nan_values(df[df.columns[1:]], percent=0.1)
-    # model = run_collaborative_filtering(spark, df)
+    # df = add_nan_values(df[df.columns[1:]], percent=0.1)
+    model = run_collaborative_filtering(spark, df)
 
-    # model.recommendForAllItems(52).show(truncate=False)
-    # model.recommendForAllUsers(25).show(truncate=False)
+    model.recommendForAllItems(52).show(truncate=False)
+    model.recommendForAllUsers(25).show(truncate=False)
 
-    # user_id = [i for i in range(df.shape[0])]
-
-    # rows = []
-    # for i in user_id:
-    #     for index, c in enumerate(df):
-    #         rows.append((i, index, df.iloc[i][index]))
-
-    # cf_df = pd.DataFrame(rows, columns=["user_id", "feature_id", "value"])
-
-    # cf_df = spark.createDataFrame(cf_df)
-
-    # ratings = cf_df
-    # (training, test) = ratings.randomSplit([0.8, 0.2])
-
-    # ranks = [1, 3, 5, 10, 15, 20, 20, 30]
-    # regParams = [0.01, 0.1, 0.05, 0.7, 1.0, 1.5]
-    # M = tune_ALS(training, test, 10, regParams, ranks)
-    # print("********STO STAMPANDO********")
-    # print("model=", M)
