@@ -9,7 +9,8 @@ from poll_processing import execute_pipeline, directories, init_spark
 import os
 
 os.environ["PYARROW_IGNORE_TIMEZONE"] = "1"
-
+os.environ["SPARK_LOCAL_IP"] = "127.0.0.1"
+os.environ["PYSPARK_PYTHON"] = "python"
 
 def add_nan_values(df: pd.DataFrame, percent: float = 0.1) -> pd.DataFrame:
     celle_el = []
