@@ -36,7 +36,7 @@ def add_nan_values(df: pd.DataFrame, percent: float = 0.1) -> pd.DataFrame:
 def run_collaborative_filtering(
     spark: SparkSession,
     df,
-) -> None:
+):
     user_id = [i for i in range(df.shape[0])]
 
     rows = []
@@ -58,7 +58,7 @@ def run_collaborative_filtering(
         userCol="user_id",
         itemCol="feature_id",
         ratingCol="value",
-        coldStartStrategy="nan",
+        coldStartStrategy="drop",
     )
 
     model = als.fit(training)
@@ -74,8 +74,7 @@ def run_collaborative_filtering(
     rmse = evaluator.evaluate(predictions)
     print("Root-mean-square error = " + str(rmse))
 
-    # Generate top 10 movie recommendations for each user
-    userRecs = model.recommendForAllUsers(10)
+    return model
 
 
 def run_kmeans(spark: SparkSession, df: pd.DataFrame) -> None:
@@ -99,10 +98,7 @@ def run_kmeans(spark: SparkSession, df: pd.DataFrame) -> None:
 
     model = kmeans.fit(df_vectors)
 
-    model.getMaxBlockSizeInMB()
-    model.getDistanceMeasure()
-
-    model.predict(df_vectors.head().features)
+    model.predict(df_vectors.head()["features"])
 
     # centers = model.clusterCenters()
     # len(centers)
@@ -179,8 +175,13 @@ if __name__ == "__main__":
     spark = init_spark()
     df = execute_pipeline(spark, directories).toPandas()
 
-    df = add_nan_values(df[df.columns[1:]], percent=0.1)
-    run_collaborative_filtering(spark, df)
+    run_kmeans(spark, df)
+
+    # # df = add_nan_values(df[df.columns[1:]], percent=0.1)
+    # model = run_collaborative_filtering(spark, df)
+
+    # model.recommendForAllItems(52).show(truncate=False)
+    # model.recommendForAllUsers(25).show(truncate=False)
 
     # user_id = [i for i in range(df.shape[0])]
 
