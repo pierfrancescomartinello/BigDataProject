@@ -78,48 +78,43 @@ def run_collaborative_filtering(
     userRecs = model.recommendForAllUsers(10)
 
 
-def run_kmeans(spark: SparkSession, df_indexes) -> None:
-    df_features = df_indexes.toPandas()
-
+def run_kmeans(spark: SparkSession, df: pd.DataFrame) -> None:
     vectors = []
-    for _, r in df_features.iterrows():
+
+    for _, r in df.iterrows():
         values = []
-        for i in range(len(df_features.columns)):
+        for i in range(len(df.columns)):
             values.append(r[i])
 
         vectors.append(Vectors.dense(values))
 
     df_vectors = spark.createDataFrame(pd.DataFrame({"features": vectors}))
 
-    kmeans = KMeans(k=3)
-
-    kmeans.setSeed(1)
-    # kmeans.setWeightCol("weigh_col")
-    kmeans.setMaxIter(10)
-    kmeans.getMaxIter()
-    kmeans.clear(kmeans.maxIter)
-    kmeans.getSolver()
+    kmeans = KMeans(
+        k=3,
+        seed=1,
+        maxIter=10,
+        predictionCol="prediction",
+    )
 
     model = kmeans.fit(df_vectors)
 
     model.getMaxBlockSizeInMB()
     model.getDistanceMeasure()
-    model.setPredictionCol("prediction")
 
     model.predict(df_vectors.head().features)
 
-    centers = model.clusterCenters()
-    len(centers)
+    # centers = model.clusterCenters()
+    # len(centers)
 
     transformed = model.transform(df_vectors).select("features", "prediction")
-    rows = transformed.collect()
+    # rows = transformed.collect()
 
     print(model.hasSummary)
-    summary = model.summary
-    print(summary.k)
-    print(summary.clusterSizes)
+    print(model.summary.k)
+    print(model.summary.clusterSizes)
 
-    summary.cluster.show(52)
+    model.summary.cluster.show(52)
 
 
 def tune_ALS(train_data, validation_data, maxIter, regParams, ranks):
