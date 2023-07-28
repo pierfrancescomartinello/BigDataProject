@@ -113,63 +113,6 @@ def run_kmeans(spark: SparkSession, df: pd.DataFrame) -> None:
     model.summary.cluster.show(52)
 
 
-def tune_ALS(train_data, validation_data, maxIter, regParams, ranks):
-    """
-    grid search function to select the best model based on RMSE of
-    validation data
-    Parameters
-    ----------
-    train_data: spark DF with columns ['userId', 'movieId', 'rating']
-
-    validation_data: spark DF with columns ['userId', 'movieId', 'rating']
-
-    maxIter: int, max number of learning iterations
-
-    regParams: list of float, one dimension of hyper-param tuning grid
-
-    ranks: list of float, one dimension of hyper-param tuning grid
-
-    Return
-    ------
-    The best fitted ALS model with lowest RMSE score on validation data
-    """
-    # initial
-    min_error = float("inf")
-    best_rank = -1
-    best_regularization = 0
-    best_model = None
-    for rank in ranks:
-        for reg in regParams:
-            # get ALS model
-            als = (
-                ALS(userCol="user_id", itemCol="feature_id", ratingCol="value")
-                .setMaxIter(maxIter)
-                .setRank(rank)
-                .setRegParam(reg)
-            )
-            # train ALS model
-            model = als.fit(train_data)
-            # evaluate the model by computing the RMSE on the validation data
-            predictions = model.transform(validation_data)
-            evaluator = RegressionEvaluator(
-                metricName="rmse", labelCol="value", predictionCol="prediction"
-            )
-            rmse = evaluator.evaluate(predictions)
-            print(
-                "{} latent factors and regularization = {}: "
-                "validation RMSE is {}".format(rank, reg, rmse)
-            )
-            if rmse < min_error:
-                min_error = rmse
-                best_rank = rank
-                best_regularization = reg
-                best_model = model
-    print(
-        "\nThe best model has {} latent factors and "
-        "regularization = {}".format(best_rank, best_regularization)
-    )
-    return best_model
-
 
 if __name__ == "__main__":
     spark = init_spark()
@@ -177,28 +120,8 @@ if __name__ == "__main__":
 
     run_kmeans(spark, df)
 
-    # # df = add_nan_values(df[df.columns[1:]], percent=0.1)
-    # model = run_collaborative_filtering(spark, df)
+    # df = add_nan_values(df[df.columns[1:]], percent=0.1)
+    model = run_collaborative_filtering(spark, df)
 
-    # model.recommendForAllItems(52).show(truncate=False)
-    # model.recommendForAllUsers(25).show(truncate=False)
-
-    # user_id = [i for i in range(df.shape[0])]
-
-    # rows = []
-    # for i in user_id:
-    #     for index, c in enumerate(df):
-    #         rows.append((i, index, df.iloc[i][index]))
-
-    # cf_df = pd.DataFrame(rows, columns=["user_id", "feature_id", "value"])
-
-    # cf_df = spark.createDataFrame(cf_df)
-
-    # ratings = cf_df
-    # (training, test) = ratings.randomSplit([0.8, 0.2])
-
-    # ranks = [1, 3, 5, 10, 15, 20, 20, 30]
-    # regParams = [0.01, 0.1, 0.05, 0.7, 1.0, 1.5]
-    # M = tune_ALS(training, test, 10, regParams, ranks)
-    # print("********STO STAMPANDO********")
-    # print("model=", M)
+    model.recommendForAllItems(52).show(truncate=False)
+    model.recommendForAllUsers(25).show(truncate=False)
