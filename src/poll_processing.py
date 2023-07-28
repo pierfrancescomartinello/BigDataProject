@@ -416,7 +416,7 @@ def execute_pipeline(
     spark: SparkSession,
     dirs: list,
     overwrite: bool = False,
-):
+) -> pyspark.sql.DataFrame:
     poll_dir, questions_dir, df_indexes_dir = dirs
 
     # load the csv poll as a dataframe
