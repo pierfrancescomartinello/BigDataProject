@@ -81,49 +81,44 @@ def run_collaborative_filtering(
 
 
 def run_kmeans(spark: SparkSession, df: pd.DataFrame) -> None:
-    if not os.path.exists("./data/models/kmeans"):
-        vectors = []
+    vectors = []
 
-        for _, r in df.iterrows():
-            values = []
-            for i in range(len(df.columns)):
-                values.append(r[i])
+    for _, r in df.iterrows():
+        values = []
+        for i in range(len(df.columns)):
+            values.append(r[i])
 
-            vectors.append(Vectors.dense(values))
+        vectors.append(Vectors.dense(values))
 
-        df_vectors = spark.createDataFrame(pd.DataFrame({"features": vectors}))
+    df_vectors = spark.createDataFrame(pd.DataFrame({"features": vectors}))
 
-        kmeans = KMeans(
-            k=3,
-            seed=1,
-            maxIter=10,
-            predictionCol="prediction",
-        )
+    kmeans = KMeans(
+        k=3,
+        seed=1,
+        maxIter=10,
+        predictionCol="prediction",
+    )
 
-        model = kmeans.fit(df_vectors)
+    model = kmeans.fit(df_vectors)
 
-        # saving the model only works on Linux
-        if os.name == 'posix':
-            KMeansModel.save(spark.sparkContext, "./data/models/kmeans/")
+    model.predict(df_vectors.head()["features"])  # type: ignore
 
-    else:
-        model = KMeansModel.load(spark.sparkContext, "./data/models/kmeans")
-        
-        print(model)
+    centers = model.clusterCenters()
+    # len(centers)
 
-        # model.predict(df_vectors.head()["features"])
+    transformed = model.transform(df_vectors).select("features", "prediction")
+    # rows = transformed.collect()
 
-        # # centers = model.clusterCenters()
-        # # len(centers)
+    clusters = [r[0] for r in model.summary.cluster.collect()]
 
-        # transformed = model.transform(df_vectors).select("features", "prediction")
-        # # rows = transformed.collect()
+    # add clusters column
+    df["cluster_idx"] = clusters
 
-        # print(model.hasSummary)
-        # print(model.summary.k)
-        # print(model.summary.clusterSizes)
+    # sort by cluster index
+    df.sort_values(by="cluster_idx", inplace=True)
 
-        # model.summary.cluster.show(52)
+    # save clustering result to disk
+    df.to_csv('./data/clusters.csv')
 
 
 if __name__ == "__main__":
@@ -138,4 +133,6 @@ if __name__ == "__main__":
     # # print(model_pd)
     # print(model.recommendForAllUsers(25).toPandas())
 
-    run_kmeans(spark, df)
+    # run_kmeans(spark, df[df.columns[1:]])
+
+    clustering = pd.read_csv('./data/clusters.csv')
