@@ -109,7 +109,7 @@ def run_kmeans(spark: SparkSession, df: pd.DataFrame) -> list:
     clusters = [r[0] for r in model.summary.cluster.collect()]
 
     # add clusters column
-    df.insert(df.shape[1] - 1, "clusters", clusters)
+    df.insert(df.shape[1] - 1, "cluster_idx", clusters)
 
     # sort by cluster index
     df.sort_values(by="cluster_idx", inplace=True)
@@ -123,21 +123,20 @@ def run_kmeans(spark: SparkSession, df: pd.DataFrame) -> list:
 if __name__ == "__main__":
     spark = init_spark()
     df = execute_pipeline(spark, directories).toPandas()
-    model = run_collaborative_filtering(spark, df)
+    # model = run_collaborative_filtering(spark, df)
 
-    items_df = model.recommendForAllItems(52).toPandas()
-    col_rec = items_df["recommendations"]
+    # items_df = model.recommendForAllItems(52).toPandas()
+    # col_rec = items_df["recommendations"]
 
-    col_rec_rounded = []
-    for l in col_rec:
-        col_rec_rounded.append([(item[0], round(item[1],2)) for item in l])
-    items_df.drop(columns="recommendations", inplace=True)
-    items_df.insert(1, "recommendations", col_rec_rounded)
+    # col_rec_rounded = []
+    # for l in col_rec:
+    #     col_rec_rounded.append([(item[0], round(item[1],2)) for item in l])
+    # items_df.drop(columns="recommendations", inplace=True)
+    # items_df.insert(1, "recommendations", col_rec_rounded)
     
-    print(items_df)
-    
-    print(model.recommendForAllUsers(25).toPandas())
+    # print(items_df)
+    # print(model.recommendForAllUsers(25).toPandas())
 
-    # run_kmeans(spark, df[df.columns[1:]])
+    run_kmeans(spark, df[df.columns[1:]])
 
-    #clustering = pd.read_csv('./data/clusters.csv')
+    # clustering = pd.read_csv('./data/clusters.csv')
