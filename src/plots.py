@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 from pandas.plotting import scatter_matrix
-from matplotlib import pyplot
+import matplotlib.pyplot as plt
 
 from poll_processing import execute_pipeline, init_spark
 from run_algorithms import run_kmeans, directories
@@ -44,18 +44,30 @@ def show_scatter_matrices(df_features) -> None:
     ax.scatter(df_features["i_e8"], df_features["i_e9"])
 
 
-def plot_clusters(df_clusters: pd.DataFrame) -> None:
-    if not os.path.exists("./data/clusters_avg.csv"):
+def plot_clusters(df_clusters: pd.DataFrame, csv_dir: str) -> None:
+    if not os.path.exists("/data/clusters_avg.csv"):
         avg = df_clusters.groupby(["cluster_idx"]).aggregate(
             {f: [np.mean] for f in df_clusters.columns[1:-1]}
         )
 
-        avg.to_csv("./data/clusters_avg.csv")
+        avg.to_csv(csv_dir)
 
     else:
-        avg = pd.read_csv("./data/clusters_avg.csv")
+        avg = pd.read_csv(csv_dir)
 
-    return avg
+    zero, ones, twos = avg.loc[0], avg.loc[1], avg.loc[2]
+
+    plt.figure(figsize=(15, 10))
+
+    # y = [487, 525, 835, 1142, 1228]
+    colors = ["red", "blue", "green"]
+    avgs = [zero[1:], ones[1:], twos[1:]]
+    for i in range(len(avgs)):
+        plt.plot(avgs[i], color=colors[i], label=f"Cluster {i}", linewidth=0.8)
+
+    plt.legend()
+    plt.show()
+
 
 if __name__ == "__main__":
     spark = init_spark()
@@ -64,4 +76,4 @@ if __name__ == "__main__":
     df = pd.read_csv("./data/clusters.csv")
     # centers = run_kmeans(spark, df[df.columns[1:]])
 
-    plot_clusters(df)
+    # plot_clusters(df)

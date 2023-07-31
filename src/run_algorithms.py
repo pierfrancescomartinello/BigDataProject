@@ -109,7 +109,7 @@ def run_kmeans(spark: SparkSession, df: pd.DataFrame) -> list:
     clusters = [r[0] for r in model.summary.cluster.collect()]
 
     # add clusters column
-    df.insert(df.shape[1] - 1, "cluster_idx", clusters)
+    df.insert(df.shape[1], "cluster_idx", clusters)
 
     # sort by cluster index
     df.sort_values(by="cluster_idx", inplace=True)
@@ -128,6 +128,10 @@ if __name__ == "__main__":
     # items_df = model.recommendForAllItems(52).toPandas()
     # col_rec = items_df["recommendations"]
 
+    # model.recommendForAllItems(52).show(truncate=False)
+    # recs_df = model.recommendForAllItems(52).toPandas()
+    # # print(model_pd)
+    # print(model.recommendForAllUsers(25).toPandas())
     # col_rec_rounded = []
     # for l in col_rec:
     #     col_rec_rounded.append([(item[0], round(item[1],2)) for item in l])
@@ -135,8 +139,12 @@ if __name__ == "__main__":
     # items_df.insert(1, "recommendations", col_rec_rounded)
     
     # print(items_df)
+    
     # print(model.recommendForAllUsers(25).toPandas())
 
-    run_kmeans(spark, df[df.columns[1:]])
+    # run_kmeans(spark, df[df.columns[1:]])
 
-    # clustering = pd.read_csv('./data/clusters.csv')
+    # clustering = pd.read_csv("./data/clusters.csv")
+
+            
+    #clustering = pd.read_csv('./data/clusters.csv')
