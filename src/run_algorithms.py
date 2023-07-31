@@ -7,7 +7,7 @@ import pandas as pd
 import random
 from poll_processing import execute_pipeline, directories, init_spark
 import os
-from pyspark.ml.pipeline import PipelineModel
+from pyspark.mllib.clustering import KMeansModel
 
 os.environ["PYARROW_IGNORE_TIMEZONE"] = "1"
 os.environ["SPARK_LOCAL_IP"] = "127.0.0.1"
@@ -104,10 +104,10 @@ def run_kmeans(spark: SparkSession, df: pd.DataFrame) -> None:
 
         # saving the model only works on Linux
         if os.name == 'posix':
-            model.save("./data/models/kmeans/")
+            KMeansModel.save(spark.sparkContext, "./data/models/kmeans/")
 
     else:
-        model = PipelineModel.load("./data/models/kmeans")
+        model = KMeansModel.load(spark.sparkContext, "./data/models/kmeans")
         
         print(model)
 
