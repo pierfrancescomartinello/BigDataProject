@@ -12,6 +12,7 @@ os.environ["PYARROW_IGNORE_TIMEZONE"] = "1"
 os.environ["SPARK_LOCAL_IP"] = "127.0.0.1"
 os.environ["PYSPARK_PYTHON"] = "python" if os.name != "posix" else "python3"
 
+
 def add_nan_values(df: pd.DataFrame, percent: float = 0.1) -> pd.DataFrame:
     celle_el = []
     c = 1
@@ -99,32 +100,33 @@ def run_kmeans(spark: SparkSession, df: pd.DataFrame) -> None:
 
     model = kmeans.fit(df_vectors)
 
-    model.predict(df_vectors.head()["features"])
+    model.save("./data/models/kmeans/")
 
-    # centers = model.clusterCenters()
-    # len(centers)
+    # model.predict(df_vectors.head()["features"])
 
-    transformed = model.transform(df_vectors).select("features", "prediction")
-    # rows = transformed.collect()
+    # # centers = model.clusterCenters()
+    # # len(centers)
 
-    print(model.hasSummary)
-    print(model.summary.k)
-    print(model.summary.clusterSizes)
+    # transformed = model.transform(df_vectors).select("features", "prediction")
+    # # rows = transformed.collect()
 
-    model.summary.cluster.show(52)
+    # print(model.hasSummary)
+    # print(model.summary.k)
+    # print(model.summary.clusterSizes)
 
+    # model.summary.cluster.show(52)
 
 
 if __name__ == "__main__":
     spark = init_spark()
     df = execute_pipeline(spark, directories).toPandas()
 
-    # run_kmeans(spark, df)
+    # # df = add_nan_values(df[df.columns[1:]], percent=0.1)
+    # model = run_collaborative_filtering(spark, df)
 
-    # df = add_nan_values(df[df.columns[1:]], percent=0.1)
-    model = run_collaborative_filtering(spark, df)
+    # # model.recommendForAllItems(52).show(truncate=False)
+    # print(model.recommendForAllItems(52).toPandas())
+    # # print(model_pd)
+    # print(model.recommendForAllUsers(25).toPandas())
 
-    #model.recommendForAllItems(52).show(truncate=False)
-    print(model.recommendForAllItems(52).toPandas())
-    #print(model_pd)
-    print(model.recommendForAllUsers(25).toPandas())
+    run_kmeans(spark, df)
