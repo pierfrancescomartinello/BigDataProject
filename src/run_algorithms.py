@@ -80,7 +80,7 @@ def run_collaborative_filtering(
     return model
 
 
-def run_kmeans(spark: SparkSession, df: pd.DataFrame) -> None:
+def run_kmeans(spark: SparkSession, df: pd.DataFrame) -> list:
     vectors = []
 
     for _, r in df.iterrows():
@@ -103,22 +103,21 @@ def run_kmeans(spark: SparkSession, df: pd.DataFrame) -> None:
 
     model.predict(df_vectors.head()["features"])  # type: ignore
 
-    centers = model.clusterCenters()
-    # len(centers)
-
     transformed = model.transform(df_vectors).select("features", "prediction")
     # rows = transformed.collect()
 
     clusters = [r[0] for r in model.summary.cluster.collect()]
 
     # add clusters column
-    df["cluster_idx"] = clusters
+    df.insert(df.shape[1] - 1, "clusters", clusters)
 
     # sort by cluster index
     df.sort_values(by="cluster_idx", inplace=True)
 
     # save clustering result to disk
-    df.to_csv('./data/clusters.csv')
+    df.to_csv("./data/clusters.csv")
+
+    return model.clusterCenters()
 
 
 if __name__ == "__main__":

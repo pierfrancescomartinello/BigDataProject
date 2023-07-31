@@ -1,7 +1,13 @@
+import os
+import numpy as np
 import pandas as pd
 import seaborn as sns
 from pandas.plotting import scatter_matrix
 from matplotlib import pyplot
+
+from poll_processing import execute_pipeline, init_spark
+from run_algorithms import run_kmeans, directories
+
 
 def show_heatmap(df_features) -> None:
     sns.heatmap(df_features.corr(), cmap="crest")
@@ -10,6 +16,7 @@ def show_heatmap(df_features) -> None:
 def show_correlation(df_features, threshold: float = 0.5) -> None:
     with pd.option_context("display.max_rows", 100, "display.max_columns", 100):
         print(df_features.corr()[df_features.corr() >= threshold])
+
 
 def show_scatter_matrices(df_features) -> None:
     scatter_matrix(
@@ -36,5 +43,25 @@ def show_scatter_matrices(df_features) -> None:
     pyplot.ylabel("lavoro")
     ax.scatter(df_features["i_e8"], df_features["i_e9"])
 
-if __name__ == '__main__':
-    pass
+
+def plot_clusters(df_clusters: pd.DataFrame) -> None:
+    if not os.path.exists("./data/clusters_avg.csv"):
+        avg = df_clusters.groupby(["cluster_idx"]).aggregate(
+            {f: [np.mean] for f in df_clusters.columns[1:-1]}
+        )
+
+        avg.to_csv("./data/clusters_avg.csv")
+
+    else:
+        avg = pd.read_csv("./data/clusters_avg.csv")
+
+    return avg
+
+if __name__ == "__main__":
+    spark = init_spark()
+    # df = execute_pipeline(spark, directories, overwrite=False).toPandas()
+
+    df = pd.read_csv("./data/clusters.csv")
+    # centers = run_kmeans(spark, df[df.columns[1:]])
+
+    plot_clusters(df)
