@@ -7,6 +7,7 @@ import pandas as pd
 import random
 from poll_processing import execute_pipeline, directories, init_spark
 import os
+from pyspark.ml.pipeline import PipelineModel
 
 os.environ["PYARROW_IGNORE_TIMEZONE"] = "1"
 os.environ["SPARK_LOCAL_IP"] = "127.0.0.1"
@@ -80,41 +81,49 @@ def run_collaborative_filtering(
 
 
 def run_kmeans(spark: SparkSession, df: pd.DataFrame) -> None:
-    vectors = []
+    if not os.path.exists("./data/models/kmeans"):
+        vectors = []
 
-    for _, r in df.iterrows():
-        values = []
-        for i in range(len(df.columns)):
-            values.append(r[i])
+        for _, r in df.iterrows():
+            values = []
+            for i in range(len(df.columns)):
+                values.append(r[i])
 
-        vectors.append(Vectors.dense(values))
+            vectors.append(Vectors.dense(values))
 
-    df_vectors = spark.createDataFrame(pd.DataFrame({"features": vectors}))
+        df_vectors = spark.createDataFrame(pd.DataFrame({"features": vectors}))
 
-    kmeans = KMeans(
-        k=3,
-        seed=1,
-        maxIter=10,
-        predictionCol="prediction",
-    )
+        kmeans = KMeans(
+            k=3,
+            seed=1,
+            maxIter=10,
+            predictionCol="prediction",
+        )
 
-    model = kmeans.fit(df_vectors)
+        model = kmeans.fit(df_vectors)
 
-    model.save("./data/models/kmeans/")
+        # saving the model only works on Linux
+        if os.name == 'posix':
+            model.save("./data/models/kmeans/")
 
-    # model.predict(df_vectors.head()["features"])
+    else:
+        model = PipelineModel.load("./data/models/kmeans")
+        
+        print(model)
 
-    # # centers = model.clusterCenters()
-    # # len(centers)
+        # model.predict(df_vectors.head()["features"])
 
-    # transformed = model.transform(df_vectors).select("features", "prediction")
-    # # rows = transformed.collect()
+        # # centers = model.clusterCenters()
+        # # len(centers)
 
-    # print(model.hasSummary)
-    # print(model.summary.k)
-    # print(model.summary.clusterSizes)
+        # transformed = model.transform(df_vectors).select("features", "prediction")
+        # # rows = transformed.collect()
 
-    # model.summary.cluster.show(52)
+        # print(model.hasSummary)
+        # print(model.summary.k)
+        # print(model.summary.clusterSizes)
+
+        # model.summary.cluster.show(52)
 
 
 if __name__ == "__main__":
