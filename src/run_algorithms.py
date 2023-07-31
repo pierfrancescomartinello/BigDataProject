@@ -14,6 +14,17 @@ os.environ["SPARK_LOCAL_IP"] = "127.0.0.1"
 os.environ["PYSPARK_PYTHON"] = "python" if os.name != "posix" else "python3"
 
 
+def round_cf_df(df: pd.DataFrame) -> pd.DataFrame:
+    col_rec_rounded = []
+    for l in df["recommendations"]:
+        col_rec_rounded.append([(item[0], round(item[1], 2)) for item in l])
+
+    df.drop(columns="recommendations", inplace=True)
+    df.insert(1, "recommendations", col_rec_rounded)
+
+    return df
+
+
 def add_nan_values(df: pd.DataFrame, percent: float = 0.1) -> pd.DataFrame:
     celle_el = []
     c = 1
@@ -115,7 +126,7 @@ def run_kmeans(spark: SparkSession, df: pd.DataFrame) -> list:
     df.sort_values(by="cluster_idx", inplace=True)
 
     # save clustering result to disk
-    df.to_csv("./data/clusters.csv")
+    # df.to_csv("./data/clusters.csv")
 
     return model.clusterCenters()
 
@@ -132,19 +143,20 @@ if __name__ == "__main__":
     # recs_df = model.recommendForAllItems(52).toPandas()
     # # print(model_pd)
     # print(model.recommendForAllUsers(25).toPandas())
-    # col_rec_rounded = []
-    # for l in col_rec:
-    #     col_rec_rounded.append([(item[0], round(item[1],2)) for item in l])
-    # items_df.drop(columns="recommendations", inplace=True)
-    # items_df.insert(1, "recommendations", col_rec_rounded)
-    
+
+    col_rec_rounded = []
+    for l in col_rec:
+        col_rec_rounded.append([(item[0], round(item[1], 2)) for item in l])
+
+    items_df.drop(columns="recommendations", inplace=True)
+    items_df.insert(1, "recommendations", col_rec_rounded)
+
     # print(items_df)
-    
+
     # print(model.recommendForAllUsers(25).toPandas())
 
     # run_kmeans(spark, df[df.columns[1:]])
 
     # clustering = pd.read_csv("./data/clusters.csv")
 
-            
-    #clustering = pd.read_csv('./data/clusters.csv')
+    # clustering = pd.read_csv('./data/clusters.csv')

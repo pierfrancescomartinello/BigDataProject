@@ -439,6 +439,7 @@ def execute_pipeline(
 
         # uses a spark df to compute scores and returns another spark df
         df_scores = compute_scores_df(df_processed, questions)
+        df_scores.toPandas().to_csv('./data/df_scores.csv')
 
         # compute indexes, return as a dictionary and convert it to pd.DF
         indexes = compute_indexes(df_processed, df_scores, questions)
