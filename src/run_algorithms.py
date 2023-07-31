@@ -134,10 +134,10 @@ def run_kmeans(spark: SparkSession, df: pd.DataFrame) -> list:
 if __name__ == "__main__":
     spark = init_spark()
     df = execute_pipeline(spark, directories).toPandas()
-    model = run_collaborative_filtering(spark, df)
+    # model = run_collaborative_filtering(spark, df)
 
-    items_df = model.recommendForAllItems(52).toPandas()
-    col_rec = items_df["recommendations"]
+    # items_df = model.recommendForAllItems(52).toPandas()
+    # col_rec = items_df["recommendations"]
 
     # model.recommendForAllItems(52).show(truncate=False)
     # recs_df = model.recommendForAllItems(52).toPandas()
