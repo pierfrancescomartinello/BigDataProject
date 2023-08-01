@@ -144,12 +144,12 @@ if __name__ == "__main__":
     # # print(model_pd)
     # print(model.recommendForAllUsers(25).toPandas())
 
-    col_rec_rounded = []
-    for l in col_rec:
-        col_rec_rounded.append([(item[0], round(item[1], 2)) for item in l])
+    # col_rec_rounded = []
+    # for l in col_rec:
+    #     col_rec_rounded.append([(item[0], round(item[1], 2)) for item in l])
 
-    items_df.drop(columns="recommendations", inplace=True)
-    items_df.insert(1, "recommendations", col_rec_rounded)
+    # items_df.drop(columns="recommendations", inplace=True)
+    # items_df.insert(1, "recommendations", col_rec_rounded)
 
     # print(items_df)
 
