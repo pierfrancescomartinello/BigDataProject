@@ -36,14 +36,15 @@
 
 ## Indexes
 
-1. SI1, SI3: The ratio of open space area to the total area (personal) = (9.)/(10.) (100pt)
+1. i_M1 or "green space ratio (home)": The ratio of open space area to the total area (personal) = (9.)/(10.) (100pt)
 
-2. SI1, SI3: The ratio of open space area to the total area (work) = (19.)/(18.) (100pt)
+2. i_M2 or "green space ratio (work)": The ratio of open space area to the total area (work) = (19.)/(18.) (100pt)
 
-3. SI5: The total open space area divided by the total family size = (10.)/(0.) (300pt)
+3. i_M3 or "space-family ratio": The total open space area divided by the total family size = (10.)/(0.) (300pt)
 
-4. SI6: Percentage of budget for sustainability efforts = (13.)/(12.)+(13.)+(14.) (300pt)
+4. i_M4 or "sustainability budget percentage": Percentage of budget for sustainability efforts = (13.)/(12.)+(13.)+(14.) (300pt)
 
-5. TR7: Number of initiatives to decrease private vehicles on job/university = 21.
-6. TR8: Pedestrian path on job/university = 20.
-7. (6.)/(5.)
+5. i_M5 or "initiatives score": Number of initiatives to decrease private vehicles on job/university = 21.
+6. i_M6 or "pedestrian path score": Pedestrian path on job/university = 20.
+7. i_M7 or "vehicle pollution ratio": (6.)/(5.)
+
